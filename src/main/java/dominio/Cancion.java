@@ -4,8 +4,8 @@ import java.sql.Date;
 
 public class Cancion {
 	@Id
-	@SequenceGenerator(name = "persona_id_generator", sequenceName = "persona_id_seq", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "persona_id_generator")
+	@SequenceGenerator(name = "cancion_id_generator", sequenceName = "cancion_id_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cancion_id_generator")
 	private Long m_idcancion;
 	public String m_nombre_cancion;
 	private boolean m_activo;
