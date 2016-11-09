@@ -1,7 +1,18 @@
 package dominio;
 
 import java.sql.Date;
+import java.util.Collection;
+import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+
+@Entity
 public class Cancion {
 	@Id
 	@SequenceGenerator(name = "cancion_id_generator", sequenceName = "cancion_id_seq", allocationSize = 1)
@@ -12,6 +23,7 @@ public class Cancion {
 	private String m_letra;
 	private Date m_fecha;
 	private Integer m_numreproducciones;
+	public Integer m_valoracion;
 	
 	
 	public void set_id_cancion(Long id_cancion)
@@ -63,6 +75,7 @@ public class Cancion {
 		System.out.println("nombre de la cancion: "+m_nombre_cancion+"\n");
 		System.out.println("letra de la cancion: "+get_letra_cancion()+"\n");
 		System.out.println("fecha de lanzamiento: "+get_fecha_cancion()+"\n");
+		System.out.println("valoracion de la cancion : "+m_valoracion+"\n");
 	}
 	
 	
