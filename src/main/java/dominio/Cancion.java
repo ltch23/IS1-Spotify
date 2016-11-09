@@ -23,7 +23,7 @@ public class Cancion {
 	private String m_letra;
 	private Date m_fecha;
 	private Integer m_numreproducciones;
-	public Integer m_valoracion;
+	public Collection<Integer> m_valoraciones;
 	
 	
 	public void set_id_cancion(Long id_cancion)
@@ -45,6 +45,11 @@ public class Cancion {
 	public void set_numreproducciones(Integer numreproducciones)
 	{
 		m_numreproducciones=numreproducciones;
+	}
+
+	public void add_valoracion(Integer valoracion)
+	{
+		m_valoraciones.add(valoracion);
 	}
 	
 	
@@ -75,7 +80,6 @@ public class Cancion {
 		System.out.println("nombre de la cancion: "+m_nombre_cancion+"\n");
 		System.out.println("letra de la cancion: "+get_letra_cancion()+"\n");
 		System.out.println("fecha de lanzamiento: "+get_fecha_cancion()+"\n");
-		System.out.println("valoracion de la cancion : "+m_valoracion+"\n");
 	}
 	
 	
