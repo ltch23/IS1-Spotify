@@ -1,18 +1,24 @@
-package dominio;
+package app.dominio;
 
-import java.awt.List;
 import java.util.Collection;
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-public class Usuario extends Persona{
+public class Usuario {
+//	enum TipoUsuario {
+//		ADMIN, GENERAL
+//	}
+
 	@Id
 	@SequenceGenerator(name = "usuario_id_generator", sequenceName = "usuario_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usuario_id_generator")
@@ -29,13 +35,20 @@ public class Usuario extends Persona{
 	
 	@Column(nullable=false)
 	private boolean activo;
-	
+
+	@OneToMany(mappedBy = "usuario")
+	private Collection<Playlist> playlists;
+
+	@OneToOne
+	@JoinColumn(name = "persona_id")
+	private Persona persona;
 	/*
 	@OneToMany(mappedBy="Lista_de_canciones")
 	Crear Clase Cancion
 	private Collection<Cancion> timeline;
 	*/
-	
+//	TipoUsuario tipo;
+
 	public Long get_id_usuario(){
 		return id_usuario;
 	}
@@ -75,6 +88,14 @@ public class Usuario extends Persona{
 	
 	public void set_activo(boolean activo){
 		this.activo=activo;
+	}
+
+	public Collection<Playlist> getPlaylists() {
+		return playlists;
+	}
+
+	public void setPlaylists(Collection<Playlist> playlists) {
+		this.playlists = playlists;
 	}
 	
 	

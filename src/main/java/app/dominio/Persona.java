@@ -1,10 +1,11 @@
-package dominio;
+package app.dominio;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -20,6 +21,9 @@ public class Persona {
 	
 	@Column(nullable=false)
 	private boolean sexo;
+//
+//	@ManyToMany
+//	private Artista artista;
 
 	public Long get_id_persona(){
 		return id_persona;

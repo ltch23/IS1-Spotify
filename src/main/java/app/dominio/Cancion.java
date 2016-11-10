@@ -1,8 +1,8 @@
-package dominio;
+package app.dominio;
 
 import java.sql.Date;
 import java.util.Collection;
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
-
-import antlr.collections.List;
 
 @Entity
 public class Cancion {
@@ -30,11 +28,12 @@ public class Cancion {
 	private Date m_fecha;
 	
 	private Integer m_numreproducciones;
-	
-	public Collection<Integer> m_valoraciones;
+
+	@OneToMany(mappedBy = "cancion")
+	public Collection<Valoracion> m_valoraciones;
 		
 	@ManyToMany(mappedBy="songs")
-	private List playlists;
+	private Collection<Playlist> playlists;
 	
 	public void set_id_cancion(Long id_cancion)
 	{

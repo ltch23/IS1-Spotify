@@ -1,4 +1,4 @@
-package dominio;
+package app.dominio;
 
 import java.sql.Date;
 import java.util.Collection;
@@ -11,10 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
-
-import antlr.collections.List;
 
 @Entity
 public class Playlist {
@@ -22,15 +20,16 @@ public class Playlist {
 	@SequenceGenerator(name = "playlist_id_generator", sequenceName = "playlist_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "playlist_id_generator")
 	private Long id_playlist;
-	
-	@OneToMany(mappedBy="Usuario")
-	private Collection<Persona> usuario;
+
+	@ManyToOne(targetEntity = Usuario.class)
+	@JoinColumn(name = "usuario_id")
+	private Usuario usuario;
 	
 	@Column(length = 64)
 	public String nombre;
 	
-	@Column(length = 64)
-	public Usuario user;
+//	@Column(length = 64)
+//	public Usuario user;
 	
 	@Column(length = 64)
 	public Boolean activo;
@@ -40,7 +39,7 @@ public class Playlist {
 	
 	@ManyToMany
 	@JoinTable(name="playlist_has_songs", joinColumns={@JoinColumn(name="playlist_id")},inverseJoinColumns={@JoinColumn(name="cancion_id")})
-	private List songs;
+	private Collection<Cancion> songs;
 	
 	public void agregar_cancion(Cancion cancion_1){
 		
@@ -52,5 +51,13 @@ public class Playlist {
 	
 	public void change_name(String namePlaylist){
 		nombre = namePlaylist;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 }

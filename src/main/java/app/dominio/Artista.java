@@ -1,4 +1,4 @@
-package dominio;
+package app.dominio;
 
 import java.util.Collection;
 import java.util.Date;
@@ -22,8 +22,8 @@ public class Artista {
 		private Long id_artista;
 		
 				//Artista compuesto por uno o muchas personas
-		@OneToMany(mappedBy="Personas")
-		private Collection<Persona> artistas;
+//		@OneToMany(mappedBy="Personas")
+//		private Collection<Persona> artistas;
 		
 		
 		@Column(length = 64)
@@ -36,13 +36,13 @@ public class Artista {
 		private boolean activo;
 		
 		//get y set de personas
-		public Collection<Persona> get_artistas(){
-			return artistas;
-		}
-		
-		public void set_artistas (Collection<Persona> artistas){
-			this.artistas=artistas;
-		}
+//		public Collection<Persona> get_artistas(){
+//			return artistas;
+//		}
+//		
+//		public void set_artistas (Collection<Persona> artistas){
+//			this.artistas=artistas;
+//		}
 		
 		
 		public String get_nombre_artista(){
