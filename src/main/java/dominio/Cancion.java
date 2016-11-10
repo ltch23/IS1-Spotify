@@ -2,15 +2,26 @@ package dominio;
 
 import java.sql.Date;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
 public class Cancion {
 	@Id
 	@SequenceGenerator(name = "cancion_id_generator", sequenceName = "cancion_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cancion_id_generator")
+	
 	private Long m_idcancion;
+	
 	public String m_nombre_cancion;
+	
 	private boolean m_activo;
+	
 	private String m_letra;
+	
 	private Date m_fecha;
+	
 	private Integer m_numreproducciones;
 	
 	
