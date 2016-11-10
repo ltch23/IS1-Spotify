@@ -13,8 +13,8 @@ import java.util.Date;
 
 public class Valoracion {
 	@Id
-	@SequenceGenerator(name = "album_id_generator", sequenceName = "album_id_seq", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "album_id_generator")
+	@SequenceGenerator(name = "valoracion_id_generator", sequenceName = "valoracion_id_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "valoracion_id_generator")
 	private Long id_valoración;
 	
 	@Column(nullable=false)
