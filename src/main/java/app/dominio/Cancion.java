@@ -1,8 +1,9 @@
 package app.dominio;
 
-import java.sql.Date;
 import java.util.Collection;
+import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +19,8 @@ public class Cancion {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cancion_id_generator")
 	
 	private Long m_idcancion;
-	
+
+	@Column(length = 256, nullable = false, unique= false)
 	public String m_nombre_cancion;
 	
 	private boolean m_activo;
@@ -56,7 +58,7 @@ public class Cancion {
 		m_numreproducciones=numreproducciones;
 	}
 
-	public void add_valoracion(Integer valoracion)
+	public void add_valoracion(Valoracion valoracion)
 	{
 		m_valoraciones.add(valoracion);
 	}
