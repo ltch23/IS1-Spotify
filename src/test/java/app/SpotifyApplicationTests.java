@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import app.dominio.Administrador;
 import app.dominio.Cancion;
+import app.repositorio.AdministradorRepositorio;
 import app.repositorio.CancionRepositorio;
 
 @RunWith(SpringRunner.class)
@@ -37,5 +39,15 @@ public class SpotifyApplicationTests {
 		cancionRepositorio.save(c);
 		Cancion c2 = cancionRepositorio.buscarPorId(c.get_id_cancion());
 		Assert.assertFalse(c2.get_estado_cancion());
+	}
+	
+	@Autowired
+	AdministradorRepositorio AdmintradorRepositorio;
+	
+	@Test
+	public void testAdministrador()
+	{
+	 Administrador administrador = new Administrador();
+	 Administrador a2 = AdmintradorRepositorio.buscarPorId(administrador.getIdAdministrador());	
 	}
 }
