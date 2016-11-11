@@ -1,8 +1,5 @@
 package app.dominio;
 
-import java.util.Collection;
-import java.util.Date;
-
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -10,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -19,18 +15,18 @@ public class Artista {
 		@Id
 		@SequenceGenerator(name = "artista_id_generator", sequenceName = "artista_id_seq", allocationSize = 1)
 		@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "artista_id_generator")
-		private Long id_artista;
+		private Long idArtista;
 		
-				//Artista compuesto por uno o muchas personas
+//      Artista compuesto por uno o muchas personas
 //		@OneToMany(mappedBy="Personas")
 //		private Collection<Persona> artistas;
 		
 		
 		@Column(length = 64)
-		private String nombre_artista;
+		private String nombre;
 		
 		@Column(nullable=false)
-		private Date fecha_creacion=new Date();
+		private Date fecha=new Date();
 		
 		@Column(nullable=false)
 		private boolean activo;
@@ -45,28 +41,28 @@ public class Artista {
 //		}
 		
 		
-		public String get_nombre_artista(){
-		return nombre_artista;
+		public String getNombre(){
+		return nombre;
 		}
 		
-		public void set_nombre_artita(String nombre_artista ){
-			this.nombre_artista=nombre_artista;
+		public void setNombreArtita(String nombre){
+			this.nombre=nombre;
 		}
 		
-		public Date get_fecha_creacion(){
-			return fecha_creacion;
+		public Date getFecha(){
+			return fecha;
 		}
 		
-		public void set_fecha_creacion(Date fecha_creacion){
-			this.fecha_creacion=fecha_creacion;
+		public void setFecha(Date fecha){
+			this.fecha=fecha;
 		}
 		
-		public boolean get_activo(){
+		public boolean getActivo(){
 			return activo;
 		}
 		
-		public void set_activo(boolean activo){
+		public void setActivo(boolean activo){
 			this.activo=activo;
 		}
-	
+		
 }

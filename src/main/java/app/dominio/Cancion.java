@@ -18,80 +18,91 @@ public class Cancion {
 	@SequenceGenerator(name = "cancion_id_generator", sequenceName = "cancion_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cancion_id_generator")
 	
-	private Long m_idcancion;
+	private Long idCancion;
 
 	@Column(length = 256, nullable = false, unique= false)
-	public String m_nombre_cancion;
+	public String nombre;
 	
-	private boolean m_activo;
+	@Column(nullable=false)
+	private boolean activo;
 	
-	private String m_letra;
+	@Column(length=256)
+	private String letra;
 	
-	private Date m_fecha;
+	@Column(nullable=false)
+	private Date fecha;
 	
-	private Integer m_numreproducciones;
+	private Integer numReproducciones;
 
 	@OneToMany(mappedBy = "cancion")
-	public Collection<Valoracion> m_valoraciones;
+	public Collection<Valoracion> valoraciones;
 		
 	@ManyToMany(mappedBy="songs")
 	private Collection<Playlist> playlists;
 	
-	public void set_id_cancion(Long id_cancion)
+	public void setIdCancion(Long idCancion)
 	{
-		m_idcancion=id_cancion;
+		this.idCancion=idCancion;
 	}
-	public void set_estado_cancion(Boolean estado)
+	
+	public void setNombre(String nombre)
 	{
-		m_activo=estado;
+		this.nombre=nombre;
 	}
-	public void set_letra_cancion(String letra)
+	
+	public void setEstado(Boolean activo)
 	{
-		m_letra=letra;
+		this.activo=activo;
 	}
-	public void set_fecha_cancion(Date fecha)
+	public void setLetra(String letra)
 	{
-		m_fecha=fecha;
+		this.letra=letra;
 	}
-	public void set_numreproducciones(Integer numreproducciones)
+	public void setFecha(Date fecha)
 	{
-		m_numreproducciones=numreproducciones;
+		this.fecha=fecha;
+	}
+	public void setNumReproducciones(Integer numReproducciones)
+	{
+		this.numReproducciones=numReproducciones;
 	}
 
-	public void add_valoracion(Valoracion valoracion)
+	public void addValoracion(Valoracion valoracion)
 	{
-		m_valoraciones.add(valoracion);
+		this.valoraciones.add(valoracion);
 	}
 	
 	
 	
-	public Long get_id_cancion()
+	public Long getIdCancion()
 	{
-		return m_idcancion;
-	}
-	public boolean get_estado_cancion()
-	{
-		return m_activo;
-	}
-	public String get_letra_cancion()
-	{
-		return m_letra;
-	}
-	public Date get_fecha_cancion()
-	{
-		return m_fecha;
-	}
-	public Integer get_numreproducciones()
-	{
-		return m_numreproducciones;
+		return idCancion;
 	}
 	
-	public void obtener_info()
+	public String getNombre()
+	{
+		return nombre;
+	}
+	public boolean getEstado()
+	{
+		return activo;
+	}
+	
+	public Date getFecha()
+	{
+		return fecha;
+	}
+	public Integer getNumReproducciones()
+	{
+		return numReproducciones;
+	}
+	
+	/*public void obtener_info()
 	{
 		System.out.println("nombre de la cancion: "+m_nombre_cancion+"\n");
 		System.out.println("letra de la cancion: "+get_letra_cancion()+"\n");
 		System.out.println("fecha de lanzamiento: "+get_fecha_cancion()+"\n");
-	}
+	}*/
 	
 	
 	

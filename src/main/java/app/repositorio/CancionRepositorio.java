@@ -13,9 +13,9 @@ import app.dominio.Cancion;
 public interface CancionRepositorio extends Repository<Cancion, Long>{
 	Cancion save(Cancion cancion);
 
-	@Query("SELECT c FROM Cancion c WHERE c.m_idcancion = :id")
+	@Query("SELECT c FROM Cancion c WHERE c.idCancion = :id")
 	Cancion buscarPorId(@Param("id") Long id);
 
-	@Query("SELECT c FROM Cancion c WHERE c.m_fecha > :fecha")
+	@Query("SELECT c FROM Cancion c WHERE c.fecha > :fecha")
 	Collection<Cancion> cancionesDespuesDe(@Param("fecha") Date fecha);
 }

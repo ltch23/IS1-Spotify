@@ -19,7 +19,7 @@ public class Playlist {
 	@Id
 	@SequenceGenerator(name = "playlist_id_generator", sequenceName = "playlist_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "playlist_id_generator")
-	private Long id_playlist;
+	private Long idPlaylist;
 
 	@ManyToOne(targetEntity = Usuario.class)
 	@JoinColumn(name = "usuario_id")
@@ -28,18 +28,52 @@ public class Playlist {
 	@Column(length = 64)
 	public String nombre;
 	
-//	@Column(length = 64)
-//	public Usuario user;
-	
 	@Column(length = 64)
 	public Boolean activo;
 	
 	@Column(length = 64)
 	public Date fecha;	
 	
+	public Long getIdPlaylist(){
+		return idPlaylist;
+	}
+	
+	public String getNombre(){
+		return nombre;
+	}
+	
+	public Boolean getEstado(){
+		return activo;
+	}
+	
+	public Date getFecha(){
+		return fecha;
+	}
+	
+	public void setIdPlaylist(Long idPlaylist){
+		this.idPlaylist=idPlaylist;
+	}
+	
+	public void setNombre(String nombre){
+		this.nombre=nombre;
+	}
+	
+	public void setEstado(Boolean activo){
+		this.activo=activo;
+	}
+	
+	public void setFecha(Date fecha){
+		this.fecha=fecha;
+	}
+	
 	@ManyToMany
 	@JoinTable(name="playlist_has_songs", joinColumns={@JoinColumn(name="playlist_id")},inverseJoinColumns={@JoinColumn(name="cancion_id")})
 	private Collection<Cancion> songs;
+	
+	
+	
+	
+	
 	
 	public void agregar_cancion(Cancion cancion_1){
 		

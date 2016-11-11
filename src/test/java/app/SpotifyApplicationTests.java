@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import app.dominio.Administrador;
 import app.dominio.Cancion;
-import app.repositorio.AdministradorRepositorio;
+//import app.repositorio.AdministradorRepositorio;
 import app.repositorio.CancionRepositorio;
 
 @RunWith(SpringRunner.class)
@@ -28,20 +28,20 @@ public class SpotifyApplicationTests {
 	@Test
 	public void testCanciones() {
 		Cancion cancion = new Cancion();
-		cancion.m_nombre_cancion = "XD";
-		cancion.set_fecha_cancion(new Date());
-		cancion.set_estado_cancion(true);
+		cancion.setNombre("XD");
+		cancion.setFecha(new Date());
+		cancion.setEstado(true);
 
 		Cancion c = cancionRepositorio.save(cancion);
-		Assert.assertNotNull(c.get_id_cancion());
-		Assert.assertEquals("XD", c.m_nombre_cancion);
-		c.set_estado_cancion(false);
+		Assert.assertNotNull(c.getIdCancion());
+		Assert.assertEquals("XD", c.nombre);
+		c.setEstado(false);
 		cancionRepositorio.save(c);
-		Cancion c2 = cancionRepositorio.buscarPorId(c.get_id_cancion());
-		Assert.assertFalse(c2.get_estado_cancion());
+		Cancion c2 = cancionRepositorio.buscarPorId(c.getIdCancion());
+		Assert.assertFalse(c2.getEstado());
 	}
 	
-	@Autowired
+	/*@Autowired
 	AdministradorRepositorio AdmintradorRepositorio;
 	
 	@Test
@@ -49,5 +49,5 @@ public class SpotifyApplicationTests {
 	{
 	 Administrador administrador = new Administrador();
 	 Administrador a2 = AdmintradorRepositorio.buscarPorId(administrador.getIdAdministrador());	
-	}
+	}*/
 }
