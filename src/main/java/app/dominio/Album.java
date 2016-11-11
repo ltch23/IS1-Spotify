@@ -6,7 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
+
+import java.util.Collection;
 import java.util.Date;
 
 @Entity
@@ -27,7 +30,11 @@ public class Album {
 	private Date date;
 	
 	@ManyToOne
-	private Artista sourceArtista;
+	private Artista artista;
+		
+	
+	@OneToMany(mappedBy = "album")
+	public Collection<Cancion> canciones;
 	
 	public String get_nombre(){
 		return nombre;
@@ -54,10 +61,10 @@ public class Album {
 	}
 	
 	public Artista getSourceArtista(){
-		return sourceArtista;
+		return artista;
 	}
 	
-	public void getSourceArtista(Artista sourceArtista){
-		this.sourceArtista=sourceArtista;
+	public void getSourceArtista(Artista artista){
+		this.artista=artista;
 	}
 }

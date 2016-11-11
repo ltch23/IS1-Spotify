@@ -69,11 +69,7 @@ public class Playlist {
 	@ManyToMany
 	@JoinTable(name="playlist_has_songs", joinColumns={@JoinColumn(name="playlist_id")},inverseJoinColumns={@JoinColumn(name="cancion_id")})
 	private Collection<Cancion> songs;
-	
-	
-	
-	
-	
+		
 	
 	public void agregar_cancion(Cancion cancion_1){
 		

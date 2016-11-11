@@ -22,8 +22,10 @@ public class Valoracion {
 	@Column(nullable=false)
 	private Long cont_reproducciones;
 	
+	
 	@ManyToOne
 	private Cancion cancion;
+
 	
 	public Integer getPuntuacion(){
 		return puntuacion;

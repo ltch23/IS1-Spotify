@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
@@ -39,6 +40,10 @@ public class Cancion {
 		
 	@ManyToMany(mappedBy="songs")
 	private Collection<Playlist> playlists;
+	
+	@ManyToOne
+	private Album album;
+	
 	
 	public void setIdCancion(Long idCancion)
 	{

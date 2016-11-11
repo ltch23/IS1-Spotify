@@ -1,5 +1,6 @@
 package app.dominio;
 
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -7,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -31,21 +33,24 @@ public class Artista {
 		@Column(nullable=false)
 		private boolean activo;
 		
-		//get y set de personas
-//		public Collection<Persona> get_artistas(){
-//			return artistas;
-//		}
-//		
-//		public void set_artistas (Collection<Persona> artistas){
-//			this.artistas=artistas;
-//		}
 		
+		@OneToMany(mappedBy = "artista")
+		public Collection<Album> albums;
+		
+		
+		public Collection<Album> getAlbum(){
+		return albums;
+		}
+		
+		public void setAlbum (Collection<Album> albums){
+			this.albums=albums;
+		}
 		
 		public String getNombre(){
 		return nombre;
 		}
 		
-		public void setNombreArtita(String nombre){
+		public void setNombre(String nombre){
 			this.nombre=nombre;
 		}
 		
