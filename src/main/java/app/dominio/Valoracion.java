@@ -14,17 +14,17 @@ public class Valoracion {
 	@Id
 	@SequenceGenerator(name = "valoracion_id_generator", sequenceName = "valoracion_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "valoracion_id_generator")
-	private Long id_valoración;
+	private Long idValoración;
+	
+	@ManyToOne
+	private Cancion cancion;
 	
 	@Column(nullable=false)
 	private Integer puntuacion;
 	
-	@Column(nullable=false)
-	private Long cont_reproducciones;
 	
-	
-	@ManyToOne
-	private Cancion cancion;
+	/*@Column(nullable=false)
+	private Long cont_reproducciones;*/
 
 	
 	public Integer getPuntuacion(){
@@ -35,16 +35,25 @@ public class Valoracion {
 		this.puntuacion=puntuacion;
 	}
 	
-	public Long getContReproducciones(){
+	/*public Long getContReproducciones(){
 		return cont_reproducciones;
 	}
 	
 	public void setContReproducciones(Long cont_reproducciones){
 		this.cont_reproducciones=cont_reproducciones;
-	}
+	}*/
 	
 	public Cancion getCancion(){
 		return cancion;
+	}
+	
+	public Long getIdValoracion(){
+		return idValoración;
+	}
+	
+	
+	public Long getIdCancion(Cancion song){
+		return song.getIdCancion();
 	}
 	
 	public void setCancion(Cancion cancion){

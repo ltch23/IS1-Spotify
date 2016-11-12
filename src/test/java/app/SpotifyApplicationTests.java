@@ -11,8 +11,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import app.dominio.Administrador;
 import app.dominio.Cancion;
+import app.dominio.Valoracion;
 //import app.repositorio.AdministradorRepositorio;
 import app.repositorio.CancionRepositorio;
+import app.repositorio.ValoracionRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -20,6 +22,8 @@ public class SpotifyApplicationTests {
 
 	@Autowired
 	CancionRepositorio cancionRepositorio;
+	@Autowired
+	ValoracionRepository valoracionRepository;
 
 	@Test
 	public void contextLoads() {
@@ -28,18 +32,42 @@ public class SpotifyApplicationTests {
 	@Test
 	public void testCanciones() {
 		Cancion cancion = new Cancion();
-		cancion.setNombre("XD");
+		cancion.setNombre("XwdwD");
 		cancion.setFecha(new Date());
 		cancion.setEstado(true);
 
 		Cancion c = cancionRepositorio.save(cancion);
 		Assert.assertNotNull(c.getIdCancion());
-		Assert.assertEquals("XD", c.nombre);
+		Assert.assertEquals("XwdwD", c.nombre);
 		c.setEstado(false);
 		cancionRepositorio.save(c);
 		Cancion c2 = cancionRepositorio.buscarPorId(c.getIdCancion());
 		Assert.assertFalse(c2.getEstado());
 	}
+	
+	@Test 
+	public void testValoracion(){
+		Cancion cancion = new Cancion();
+		cancion.setNombre("wwD");
+		cancion.setFecha(new Date());
+		cancion.setEstado(true);	
+
+		Cancion c2 = cancionRepositorio.save(cancion);
+		
+		
+		Valoracion val, val2;
+		val = new Valoracion();
+		val.setPuntuacion(5);  //PUNTUACION DE LA CANCIAON
+		val.setCancion(cancion);
+		val2 = valoracionRepository.save(val);
+
+		/* Intento de cambiar la puntutacion
+		 * Assert.assertNotNull(val2.getIdValoracion());
+		val2.setPuntuacion(7);  //PUNTUACION DE LA CANCIAON
+		valoracionRepository.save(val2);
+		Assert.assertEquals("7",val2.getPuntuacion());*/
+	}
+	
 	
 	/*@Autowired
 	AdministradorRepositorio AdmintradorRepositorio;

@@ -21,6 +21,9 @@ public class Cancion {
 	
 	private Long idCancion;
 
+	@OneToMany(mappedBy = "cancion")
+	public Collection<Valoracion> valoraciones;
+	
 	@Column(length = 256, nullable = false, unique= false)
 	public String nombre;
 	
@@ -29,15 +32,13 @@ public class Cancion {
 	
 	@Column(length=256)
 	private String letra;
+
 	
 	@Column(nullable=false)
 	private Date fecha;
 	
 	private Integer numReproducciones;
 
-	@OneToMany(mappedBy = "cancion")
-	public Collection<Valoracion> valoraciones;
-		
 	@ManyToMany(mappedBy="songs")
 	private Collection<Playlist> playlists;
 	
