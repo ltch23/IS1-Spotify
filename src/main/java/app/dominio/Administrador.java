@@ -26,7 +26,9 @@ public class Administrador {
 		
 		@OneToOne
 		@JoinColumn(name = "personaId")
-		private Persona persona;
+			private Persona persona;
+
+		
 		
 		
 		public void setIdAdministrador(Long idAdministrador) {
