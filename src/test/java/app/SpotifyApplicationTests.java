@@ -14,7 +14,7 @@ import app.dominio.Cancion;
 import app.dominio.Valoracion;
 import app.repositorio.AdministradorRepositorio;
 import app.repositorio.CancionRepositorio;
-import app.repositorio.ValoracionRepository;
+import app.repositorio.ValoracionRepositorio;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -23,7 +23,7 @@ public class SpotifyApplicationTests {
 	@Autowired
 	CancionRepositorio cancionRepositorio;
 	@Autowired
-	ValoracionRepository valoracionRepository;
+	ValoracionRepositorio valoracionRepositorio;
 
 	@Test
 	public void contextLoads() {
@@ -32,13 +32,14 @@ public class SpotifyApplicationTests {
 	@Test
 	public void testCanciones() {
 		Cancion cancion = new Cancion();
-		cancion.setNombre("XwdwD");
+		cancion.setNombre("XD");
+		//cancion.nombre="XD";
 		cancion.setFecha(new Date());
 		cancion.setEstado(true);
 
 		Cancion c = cancionRepositorio.save(cancion);
 		Assert.assertNotNull(c.getIdCancion());
-		Assert.assertEquals("XwdwD", c.nombre);
+		Assert.assertEquals("XD", c.nombre);
 		c.setEstado(false);
 		cancionRepositorio.save(c);
 		Cancion c2 = cancionRepositorio.buscarPorId(c.getIdCancion());
@@ -59,7 +60,7 @@ public class SpotifyApplicationTests {
 		val = new Valoracion();
 		val.setPuntuacion(5);  //PUNTUACION DE LA CANCIAON
 		val.setCancion(cancion);
-		val2 = valoracionRepository.save(val);
+		val2 = valoracionRepositorio.save(val);
 
 		/* Intento de cambiar la puntutacion
 		 * Assert.assertNotNull(val2.getIdValoracion());
@@ -76,8 +77,8 @@ public class SpotifyApplicationTests {
 	public void testAdministrador()
 	{
 	 Administrador administrador = new Administrador();
-	 Administrador administradora = AdmintradorRepositorio.buscarPorId(administrador.getIdAdministrador());	
-	 Administrador administradores = AdmintradorRepositorio.ColeccionAdministradores();	
+	 AdmintradorRepositorio.buscarPorId(administrador.getIdAdministrador());	
+	 AdmintradorRepositorio.ColeccionAdministradores();	
 
 	}
 }
