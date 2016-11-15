@@ -16,7 +16,7 @@ public class Persona {
 	@Id
 	@SequenceGenerator(name = "persona_id_generator", sequenceName = "persona_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "persona_id_generator")
-	private Long id_persona;
+	private Long idPersona;
 	
 	@Column(length = 64)
 	private String nombre;
@@ -28,37 +28,37 @@ public class Persona {
 //	private Artista artista;
 
 	@OneToOne
-	@JoinColumn(name = "usuario_id")
+	@JoinColumn(name = "usuarioId")
 	private Usuario usuario;
 	
 	@OneToOne
-	@JoinColumn(name = "administrador_id")
+	@JoinColumn(name = "administradorId")
 	private Administrador administrador;
 	
 	
 	
 	
-	public Long get_id_persona(){
-		return id_persona;
+	public Long getIdPersona(){
+		return idPersona;
 	}
 	
-	public void set_id_persona(Long id_persona){
-		this.id_persona=id_persona;
+	public void setIdPersona(Long idPersona){
+		this.idPersona=idPersona;
 	}
 	
-	public String get_nombre(){
+	public String getNombre(){
 	return nombre;
 	}
 	
-	public void set_nombre(String nombre ){
+	public void setNombre(String nombre ){
 		this.nombre=nombre;
 	}
 	
-	public boolean get_sexo(){
+	public boolean getSexo(){
 		return sexo;
 	}
 	
-	public void set_sexo(boolean sexo){
+	public void setSexo(boolean sexo){
 		this.sexo=sexo;
 	}
 	

@@ -18,7 +18,7 @@ public class Album {
 	@Id
 	@SequenceGenerator(name = "album_id_generator", sequenceName = "album_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "album_id_generator")
-	private Long id_album;
+	private Long idAlbum;
 	
 	@Column(length = 64)
 	private String nombre;
@@ -40,19 +40,19 @@ public class Album {
 		return nombre;
 	}
 	
-	public void set_activo(String nombre){
+	public void setActivo(String nombre){
 		this.nombre=nombre;
 	}
 	
-	public boolean get_activo(){
+	public boolean getActivo(){
 		return activo;
 	}
 	
-	public void set_activo(boolean activo){
+	public void setActivo(boolean activo){
 		this.activo=activo;
 	}
 	
-	public Date get_date(){
+	public Date getDate(){
 		return date;
 	}
 	

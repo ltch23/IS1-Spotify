@@ -25,7 +25,7 @@ public class Administrador {
 		}
 		
 		@OneToOne
-		@JoinColumn(name = "persona_id")
+		@JoinColumn(name = "personaId")
 		private Persona persona;
 		
 		

@@ -22,7 +22,7 @@ public class Usuario {
 	@Id
 	@SequenceGenerator(name = "usuario_id_generator", sequenceName = "usuario_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usuario_id_generator")
-	private Long id_usuario;
+	private Long idUsuario;
 	
 	@Column(length=64)
 	public String nickname;
@@ -31,7 +31,7 @@ public class Usuario {
 	public String contrasena;
 		
 	@Column(nullable=false)
-	private Date fecha_creacion=new Date();
+	private Date fechaCreacion=new Date();
 	
 	@Column(nullable=false)
 	private boolean activo;
@@ -40,7 +40,7 @@ public class Usuario {
 	private Collection<Playlist> playlists;
 
 	@OneToOne
-	@JoinColumn(name = "persona_id")
+	@JoinColumn(name = "personaId")
 	private Persona persona;
 	/*
 	@OneToMany(mappedBy="Lista_de_canciones")
@@ -49,19 +49,19 @@ public class Usuario {
 	*/
 //	TipoUsuario tipo;
 
-	public Long get_id_usuario(){
-		return id_usuario;
+	public Long getIdUsuario(){
+		return idUsuario;
 	}
 	
-	public void set_id_usuario(Long id_usuario){
-		this.id_usuario=id_usuario;
+	public void setIdUsuario(Long idUsuario){
+		this.idUsuario=idUsuario;
 	}
 	
-	public String get_nickname(){
+	public String getNickname(){
 		return nickname;
 	}
 		
-	public void set_nickname(String nickname){
+	public void setNickname(String nickname){
 		this.nickname=nickname;
 	}
 	
@@ -74,19 +74,19 @@ public class Usuario {
 		this.contrasena=contrasena;
 	}
 	*/
-	public Date get_fecha_creacion(){
-		return fecha_creacion;
+	public Date getFechaCreacion(){
+		return fechaCreacion;
 	}
 	
-	public void set_fecha_creacion(Date fecha_creacion){
-		this.fecha_creacion=fecha_creacion;
+	public void setFechaCreacion(Date fechaCreacion){
+		this.fechaCreacion=fechaCreacion;
 	}
 	
-	public boolean get_activo(){
+	public boolean getActivo(){
 		return activo;
 	}
 	
-	public void set_activo(boolean activo){
+	public void setActivo(boolean activo){
 		this.activo=activo;
 	}
 

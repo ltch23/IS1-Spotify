@@ -22,7 +22,7 @@ public class Playlist {
 	private Long idPlaylist;
 
 	@ManyToOne(targetEntity = Usuario.class)
-	@JoinColumn(name = "usuario_id")
+	@JoinColumn(name = "usuarioId")
 	private Usuario usuario;
 	
 	@Column(length = 64)
@@ -67,19 +67,19 @@ public class Playlist {
 	}
 	
 	@ManyToMany
-	@JoinTable(name="playlist_has_songs", joinColumns={@JoinColumn(name="playlist_id")},inverseJoinColumns={@JoinColumn(name="cancion_id")})
+	@JoinTable(name="playlistHasSongs", joinColumns={@JoinColumn(name="playlistId")},inverseJoinColumns={@JoinColumn(name="cancionId")})
 	private Collection<Cancion> songs;
 		
 	
-	public void agregar_cancion(Cancion cancion_1){
+	public void agregarCancion(Cancion cancion1){
 		
 	}
 	
-	public void eliminar_cancion(Cancion cancion_1){
+	public void eliminarCancion(Cancion cancion1){
 		
 	}
 	
-	public void change_name(String namePlaylist){
+	public void changeName(String namePlaylist){
 		nombre = namePlaylist;
 	}
 

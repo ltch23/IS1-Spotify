@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import app.dominio.Administrador;
 import app.dominio.Cancion;
 import app.dominio.Valoracion;
-//import app.repositorio.AdministradorRepositorio;
+import app.repositorio.AdministradorRepositorio;
 import app.repositorio.CancionRepositorio;
 import app.repositorio.ValoracionRepository;
 
@@ -69,13 +69,15 @@ public class SpotifyApplicationTests {
 	}
 	
 	
-	/*@Autowired
+	@Autowired
 	AdministradorRepositorio AdmintradorRepositorio;
 	
 	@Test
 	public void testAdministrador()
 	{
 	 Administrador administrador = new Administrador();
-	 Administrador a2 = AdmintradorRepositorio.buscarPorId(administrador.getIdAdministrador());	
-	}*/
+	 Administrador administradora = AdmintradorRepositorio.buscarPorId(administrador.getIdAdministrador());	
+	 Administrador administradores = AdmintradorRepositorio.ColeccionAdministradores();	
+
+	}
 }
