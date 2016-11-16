@@ -1,6 +1,6 @@
 package app.dominio;
 
-import java.util.Collection;
+import java.util.List;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -35,10 +35,10 @@ public class Artista {
 		
 		
 		@OneToMany(mappedBy = "artista")
-		public Collection<Album> albums;
+		public List<Album> albums;
 		
 		
-		public Collection<Album> getAlbum(){
+		public List<Album> getAlbum(){
 		return albums;
 		}
 		

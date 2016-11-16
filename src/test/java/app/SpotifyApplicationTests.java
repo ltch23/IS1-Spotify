@@ -1,6 +1,7 @@
 package app;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Date;
 
 import org.junit.Assert;
@@ -51,13 +52,25 @@ public class SpotifyApplicationTests {
 		
 		album1.setArtista(artista1);
 		//artista1.setAlbum(album1);
-		
 		Artista a1= artistaRepositorio.save(artista1);
 		Album al1=albumRepositorio.save(album1);
 		
 		Assert.assertEquals("Churrumino", a1.getNombre());
 		Assert.assertEquals("Churrumino", al1.getArtista().getNombre());
+		
+		List<Artista> artistas2=artistaRepositorio.buscarPorEstado();
+		List<Artista> artistas=artistaRepositorio.buscarPorNombre(a1.getNombre());
+		
+		
+		for(int i=0;i<artistas.size();i++){
+		if(artistas.get(i).getNombre()=="Churrumino"){
+			continue;
+		}
+		}
+		
 		//Assert.assertEquals("larala larala", al1.getNombre());
+		
+		
 			
 	}
 	

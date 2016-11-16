@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
-import java.util.Collection;
+import java.util.List;
 import java.util.Date;
 
 @Entity
@@ -34,7 +34,7 @@ public class Album {
 		
 	
 	@OneToMany(mappedBy = "album")
-	public Collection<Cancion> canciones;
+	public List<Cancion> canciones;
 	
 	public String getNombre(){
 		return nombre;
