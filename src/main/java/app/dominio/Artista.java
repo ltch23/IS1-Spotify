@@ -42,8 +42,8 @@ public class Artista {
 		return albums;
 		}
 		
-		public void setAlbum (Collection<Album> albums){
-			this.albums=albums;
+		public void setAlbum (Album album){
+			this.albums.add(album);
 		}
 		
 		public String getNombre(){
@@ -62,11 +62,11 @@ public class Artista {
 			this.fecha=fecha;
 		}
 		
-		public boolean getActivo(){
+		public boolean getEstado(){
 			return activo;
 		}
 		
-		public void setActivo(boolean activo){
+		public void setEstado(boolean activo){
 			this.activo=activo;
 		}
 		

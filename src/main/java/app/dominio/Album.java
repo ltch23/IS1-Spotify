@@ -27,7 +27,7 @@ public class Album {
 	private boolean activo;
 	
 	@Column(nullable=false)
-	private Date date;
+	private Date fecha;
 	
 	@ManyToOne()
 	private Artista artista;
@@ -40,31 +40,31 @@ public class Album {
 		return nombre;
 	}
 	
-	public void setActivo(String nombre){
+	public void setNombre(String nombre){
 		this.nombre=nombre;
 	}
 	
-	public boolean getActivo(){
+	public boolean getEstado(){
 		return activo;
 	}
 	
-	public void setActivo(boolean activo){
+	public void setEstado(boolean activo){
 		this.activo=activo;
 	}
 	
-	public Date getDate(){
-		return date;
+	public Date getFecha(){
+		return fecha;
 	}
 	
-	public void setDate(Date date){
-		this.date=date;
+	public void setFecha(Date fecha){
+		this.fecha=fecha;
 	}
 	
-	public Artista getSourceArtista(){
+	public Artista getArtista(){
 		return artista;
 	}
 	
-	public void getSourceArtista(Artista artista){
+	public void setArtista(Artista artista){
 		this.artista=artista;
 	}
 }
