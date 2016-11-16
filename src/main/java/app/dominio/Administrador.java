@@ -1,5 +1,6 @@
 package app.dominio;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,6 +28,7 @@ public class Administrador {
 		@OneToOne
 		@JoinColumn(name = "persona_id")
 		private Persona persona;
+		
 		
 		
 		public void setIdAdministrador(Long idAdministrador) {
