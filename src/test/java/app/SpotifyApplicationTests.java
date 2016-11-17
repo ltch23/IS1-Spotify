@@ -1,8 +1,7 @@
 package app;
 
-import java.util.Collection;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -12,12 +11,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import app.dominio.Administrador;
-
-import app.dominio.Artista;
 import app.dominio.Album;
-
+import app.dominio.Artista;
 import app.dominio.Cancion;
-import app.dominio.Valoracion;
 import app.repositorio.AdministradorRepositorio;
 import app.repositorio.AlbumRepositorio;
 import app.repositorio.ArtistaRepositorio;
@@ -42,6 +38,9 @@ public class SpotifyApplicationTests {
 	PersonaRepositorio personaRepositorio;
 	@Autowired
 	UsuarioRepositorio usuarioRepositorio;	
+
+	@Autowired
+	AdministradorRepositorio admintradorRepositorio;
 	
 	
 	@Test
@@ -80,12 +79,10 @@ public class SpotifyApplicationTests {
 			
 	}
 	
-	@Test
-	public void contextLoads() {
-	}
 
 	@Test
 	public void testCanciones() {
+		/*
 		Cancion cancion = new Cancion();
 		cancion.setNombre("XwdwD");
 		cancion.setFecha(new Date());
@@ -98,13 +95,15 @@ public class SpotifyApplicationTests {
 		cancionRepositorio.save(c);
 		Cancion c2 = cancionRepositorio.buscarPorId(c.getIdCancion());
 		Assert.assertFalse(c2.getEstado());
+	*/
+	
 	}
 	
-	/*
+	
 	
 	@Test 
 	public void testValoracion(){
-		Cancion cancion = new Cancion();
+	/*	Cancion cancion = new Cancion();
 		cancion.setNombre("wwD");
 		cancion.setFecha(new Date());
 		cancion.setEstado(true);	
@@ -114,26 +113,23 @@ public class SpotifyApplicationTests {
 		val.setPuntuacion(5);  //PUNTUACION DE LA CANCIAON
 		val.setCancion(cancion);
 		val2 = valoracionRepository.save(val);
-	*/	
-		/* Intento de cambiar la puntutacion
-		 * Assert.assertNotNull(val2.getIdValoracion());
+	 	Intento de cambiar la puntutacion
+		Assert.assertNotNull(val2.getIdValoracion());
 		val2.setPuntuacion(7);  //PUNTUACION DE LA CANCIAON
 		valoracionRepository.save(val2);
 		Assert.assertEquals("7",val2.getPuntuacion());*/
-	//}
+	}
 	
 	
 	
 	
-	@Autowired
-	AdministradorRepositorio AdmintradorRepositorio;
 	
 	@Test
 	public void testAdministrador()
 	{
-	 Administrador administrador = new Administrador();
+	 /*Administrador administrador = new Administrador();
 	 AdmintradorRepositorio.buscarPorId(administrador.getIdAdministrador());	
-	 AdmintradorRepositorio.ColeccionAdministradores();	
+	 AdmintradorRepositorio.ColeccionAdministradores();*/	
 
 	}
 }
