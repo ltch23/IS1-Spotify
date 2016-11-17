@@ -48,7 +48,7 @@ public class Valoracion {
 	}
 	
 	public Long getIdValoracion(){
-		return idValoración;
+		return idValoracion;
 	}
 	
 	

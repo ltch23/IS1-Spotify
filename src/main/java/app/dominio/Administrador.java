@@ -29,8 +29,6 @@ public class Administrador {
 		@JoinColumn(name = "persona_id")
 		private Persona persona;
 		
-		
-		
 		public void setIdAdministrador(Long idAdministrador) {
 			this.idAdministrador = idAdministrador;
 		}
