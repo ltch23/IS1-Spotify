@@ -22,6 +22,8 @@ import app.repositorio.AdministradorRepositorio;
 import app.repositorio.AlbumRepositorio;
 import app.repositorio.ArtistaRepositorio;
 import app.repositorio.CancionRepositorio;
+import app.repositorio.PersonaRepositorio;
+import app.repositorio.UsuarioRepositorio;
 import app.repositorio.ValoracionRepository;
 
 @RunWith(SpringRunner.class)
@@ -36,7 +38,12 @@ public class SpotifyApplicationTests {
 	ArtistaRepositorio artistaRepositorio;
 	@Autowired
 	AlbumRepositorio albumRepositorio;
-
+	@Autowired
+	PersonaRepositorio personaRepositorio;
+	@Autowired
+	UsuarioRepositorio usuarioRepositorio;	
+	
+	
 	@Test
 	public void testArtistaAndAlbum(){
 		Artista artista1= new  Artista();

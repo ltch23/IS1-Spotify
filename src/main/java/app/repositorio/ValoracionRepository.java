@@ -11,15 +11,13 @@ import app.dominio.Valoracion;
 public interface ValoracionRepository extends Repository<Valoracion, Long> {
 	Valoracion save(Valoracion val);
 	
-	//@Query("SELECT val from Valoracion val WHERE val.idValoracion =: idva")
-	/*@Query("SELECT val FROM Valoracion val WHERE val.idValoracion =:idval")
-	Valoracion buscarPorId(@Param("idval") Long id);*/
-	
-<<<<<<< HEAD
-=======
-	//@Query("SELECT val FROM Valoracion val WHERE val.idValoracion =:idval")
-	//Valoracion buscarPorId(@Param("idval") Long id);
->>>>>>> 1f189404a5c1a504f9b909d5809bad445ee3ed74
+	@Query("SELECT val FROM Valoracion val WHERE val.idValoracion =:id")
+	Valoracion buscarPorIdValoracion(@Param("id") Long id);
+
+	@Query("SELECT val FROM Valoracion val WHERE val.idUsuario =:idc and val.cancion =:idu")
+	Valoracion buscarPorIdCancionYUsuario(@Param("idc") Long id,
+										@Param("idc") Long idu);
+
 	
 	
 	}
