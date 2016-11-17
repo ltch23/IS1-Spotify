@@ -94,6 +94,8 @@ public class SpotifyApplicationTests {
 		Assert.assertFalse(c2.getEstado());
 	}
 	
+	/*
+	
 	@Test 
 	public void testValoracion(){
 		Cancion cancion = new Cancion();
@@ -106,12 +108,13 @@ public class SpotifyApplicationTests {
 		val.setPuntuacion(5);  //PUNTUACION DE LA CANCIAON
 		val.setCancion(cancion);
 		val2 = valoracionRepository.save(val);
+	*/	
 		/* Intento de cambiar la puntutacion
 		 * Assert.assertNotNull(val2.getIdValoracion());
 		val2.setPuntuacion(7);  //PUNTUACION DE LA CANCIAON
 		valoracionRepository.save(val2);
 		Assert.assertEquals("7",val2.getPuntuacion());*/
-	}
+	//}
 	
 	
 	
