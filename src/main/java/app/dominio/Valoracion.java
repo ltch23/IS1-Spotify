@@ -14,7 +14,7 @@ public class Valoracion {
 	@Id
 	@SequenceGenerator(name = "valoracion_id_generator", sequenceName = "valoracion_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "valoracion_id_generator")
-	private Long idValoración;
+	private Long idValoracion;
 	
 	@ManyToOne
 	private Cancion cancion;
