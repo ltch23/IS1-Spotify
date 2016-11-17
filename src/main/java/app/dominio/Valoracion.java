@@ -15,9 +15,12 @@ public class Valoracion {
 	@SequenceGenerator(name = "valoracion_id_generator", sequenceName = "valoracion_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "valoracion_id_generator")
 	private Long idValoracion;
+<<<<<<< HEAD
 	
 	@Column(nullable=false)
 	private Long idUsuario;
+=======
+>>>>>>> 1f189404a5c1a504f9b909d5809bad445ee3ed74
 	
 	@ManyToOne
 	private Cancion cancion;

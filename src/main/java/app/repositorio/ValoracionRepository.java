@@ -15,6 +15,11 @@ public interface ValoracionRepository extends Repository<Valoracion, Long> {
 	/*@Query("SELECT val FROM Valoracion val WHERE val.idValoracion =:idval")
 	Valoracion buscarPorId(@Param("idval") Long id);*/
 	
+<<<<<<< HEAD
+=======
+	//@Query("SELECT val FROM Valoracion val WHERE val.idValoracion =:idval")
+	//Valoracion buscarPorId(@Param("idval") Long id);
+>>>>>>> 1f189404a5c1a504f9b909d5809bad445ee3ed74
 	
 	
 	}
