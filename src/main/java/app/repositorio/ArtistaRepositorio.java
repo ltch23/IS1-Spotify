@@ -16,7 +16,7 @@ public interface ArtistaRepositorio extends Repository<Artista, Long>{
 
 	Artista save(Artista artista);
 	
-	@Query("SELECT  * FROM Artista ")
+	@Query("SELECT a FROM Artista a ")
 	List<Artista> buscarTodos();
 	
 	

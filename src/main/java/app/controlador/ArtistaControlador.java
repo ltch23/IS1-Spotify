@@ -18,7 +18,7 @@ public class ArtistaControlador {
 	@Autowired
 	ArtistaServicio artistaServicio;
 	
-	@RequestMapping(value = "/artista", method = RequestMethod.GET)
+	@RequestMapping(value = "/artistas", method = RequestMethod.GET)
 	String MostrarArtista(@RequestParam(required = false) Long id, ModelMap model) {
 			
 			List<Artista> artistas = artistaServicio.getTodos();

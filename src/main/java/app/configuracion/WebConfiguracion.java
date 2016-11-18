@@ -11,8 +11,8 @@ import com.lyncode.jtwig.mvc.JtwigViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages={"app.controladorr", "app.repositorio", "app.serviccio"})
-public class WebCOnfiguracion extends WebMvcConfigurerAdapter {
+@ComponentScan(basePackages={"app.controlador", "app.repositorio", "app.servicio"})
+public class WebConfiguracion extends WebMvcConfigurerAdapter {
 	
 	@Bean
 	public ViewResolver viewResolver() {
