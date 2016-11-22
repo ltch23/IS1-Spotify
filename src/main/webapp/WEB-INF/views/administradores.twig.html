@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Administradores</title>
+</head>
+<body>
+	<table class=>
+		<thead>
+			<tr>
+				<th>ID de administrador</th>
+				<th>ID de Persona</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+	{% for administrador in administradores %}
+			<tr>
+				<td>{{ administrador.idAdministrador }}</td>
+				<td>{{ administrador.persona_id }}</td>
+			</tr>
+	{% endfor %}
+        </tbody>
+      </table>
+</body>
+
+</html>
