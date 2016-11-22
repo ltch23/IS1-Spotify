@@ -9,12 +9,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-
 public class Valoracion {
 	@Id
 	@SequenceGenerator(name = "valoracion_id_generator", sequenceName = "valoracion_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "valoracion_id_generator")
 	private Long idValoracion;
+
+	
+	@Column(nullable=false)
+	private Long idUsuario;
 	
 	@ManyToOne
 	private Cancion cancion;
