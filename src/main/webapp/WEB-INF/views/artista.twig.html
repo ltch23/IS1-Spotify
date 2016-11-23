@@ -2,32 +2,36 @@
 <head>
 <title>Artistas</title>
 </head>
+
 <body>
+	
 	<table class=>
 		<thead>
-			<tr>
-				<th>ID</th>
-				<th>NOMBRE</th>
-				<th>FECHA</th>
-				<th>ACTIVO</th>
-				</tr>
 		</thead>
 		
 		<tbody>
-	{% for artista in artistas %}
 			<tr>
+				<th>ID</th>
 				<td>{{ artista.id }}</td>
-				<td>{{ artista.nombre }}</td>
-				<td>{{ artista.fecha }}</td>
-				<td>{{ artista.estado }}</td>
-				<td><a href="?id={{ artista.id }}">Ver</a> 
 			</tr>
-	{% endfor %}
-        </tbody>
+			<tr>
+				<th>Nombre</th>
+				<td>{{ artista.nombre }}</td>
+			</tr>
+			<tr>
+				<th>Fecha</th>
+				<td>{{ artista.fecha }}</td>
+			</tr>
+			<tr>
+				<th>Activo</th>
+				<td>{{ artista.estado }}</td>
+			</tr>
+			
+		</tbody>
       </table>
-      
       <br />
-      <a href="agregar-artista">Agregar Nuevo Artista</a>
-</body>
+      <a href="agregar-person">Agregar Nuevo Artista</a> | <a href="artista">Listar</a>
 
+
+</body>
 </html>

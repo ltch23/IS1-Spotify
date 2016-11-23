@@ -19,19 +19,14 @@ public class Artista {
 		@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "artista_id_generator")
 		private Long idArtista;
 		
-//      Artista compuesto por uno o muchas personas
-//		@OneToMany(mappedBy="Personas")
-//		private Collection<Persona> artistas;
-		
-		
 		@Column(length = 64)
 		private String nombre;
 		
-		@Column(nullable=false)
+		@Column(nullable= false)
 		private Date fecha=new Date();
 		
-		@Column(nullable=false)
-		private boolean activo;
+		@Column(nullable= false)
+		private boolean activo=true;
 		
 		
 		@OneToMany(mappedBy = "artista")
@@ -44,6 +39,13 @@ public class Artista {
 		
 		public void setAlbum (Album album){
 			this.albums.add(album);
+		}
+		
+		public void setId(Long idArtista){
+			this.idArtista=idArtista;
+		}
+		public Long getId(){
+			return idArtista;
 		}
 		
 		public String getNombre(){

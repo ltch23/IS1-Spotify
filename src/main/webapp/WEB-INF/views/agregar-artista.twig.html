@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Artistas</title>
+</head>
+
+
+<body>
+
+<form action="artista" method="POST">
+		<table>
+			<tbody>
+				<tr>
+					<td>ID</td>
+					<td><input type="hidden" name="id" value="{{artista.id}}" />{{artista.id}}</td>
+				</tr>
+				<tr>
+					<td>Nombre</td>
+					<td><input type="text" name="nombre" value="{{artista.nombre}}" /></td>
+				</tr>
+								
+			</tbody>
+		</table>
+		<br>
+		<input type="submit" value="Guardar" />
+		<input type="button" value="Cancelar" onclick="history.back();" />
+	</form>
+</body>
+</html>
