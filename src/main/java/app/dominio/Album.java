@@ -24,10 +24,10 @@ public class Album {
 	private String nombre;
 	
 	@Column(nullable=false)
-	private boolean activo;
+	private boolean activo=true;
 	
 	@Column(nullable=false)
-	private Date fecha;
+	private Date fecha=new Date();
 	
 	@ManyToOne()
 	private Artista artista;
@@ -35,6 +35,15 @@ public class Album {
 	
 	@OneToMany(mappedBy = "album")
 	public List<Cancion> canciones;
+	
+	public Long getId(){
+		return idAlbum;
+	}
+	
+	public void setID(Long idAlbum){
+		this.idAlbum=idAlbum;
+	}
+	
 	
 	public String getNombre(){
 		return nombre;

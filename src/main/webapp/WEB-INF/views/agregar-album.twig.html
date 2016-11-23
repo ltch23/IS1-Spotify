@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Albums</title>
+</head>
+
+
+<body>
+
+<form action="album" method="POST">
+		<table>
+			<tbody>
+				<tr>
+					<td>ID</td>
+					<td><input type="hidden" name="id" value="{{album.id}}" />{{album.id}}</td>
+				</tr>
+				<tr>
+					<td>Nombre</td>
+					<td><input type="text" name="nombre" value="{{album.nombre}}" /></td>
+				</tr>
+				<tr>
+					<td>IdArtista</td>
+					<td><input type="text" name="artistas" value="{{album.artistas}}" /></td>
+				</tr>
+			
+								
+			</tbody>
+		</table>
+		<br>
+		<input type="submit" value="Guardar" />
+		<input type="button" value="Cancelar" onclick="history.back();" />
+	</form>
+</body>
+</html>

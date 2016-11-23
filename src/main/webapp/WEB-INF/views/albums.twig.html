@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Album</title>
+</head>
+<body>
+	<table class=>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>NOMBRE</th>
+				<th>FECHA</th>
+				<th>ACTIVO</th>
+				<th>ARTISTA</th>
+				
+				</tr>
+		</thead>
+		
+		<tbody>
+	{% for album in albums %}
+			<tr>
+				<td>{{ album.id }}</td>
+				<td>{{ album.nombre }}</td>
+				<td>{{ album.fecha }}</td>
+				<td>{{ album.estado }}</td>
+				<td>
+				
+				<ul>
+				{% for artista in album.artistas %}
+					<li>{{artistas.id}} {{artistas.nombre}}</li>
+				{% endfor %}
+				</ul>
+							
+				</td>
+				<td><a href="?id={{ album.id }}">Ver</a> 
+			</tr>
+	{% endfor %}
+        </tbody>
+      </table>
+      
+      <br />
+      <a href="agregar-album">Agregar Nuevo Album</a>
+</body>
+
+</html>

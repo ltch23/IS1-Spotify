@@ -20,13 +20,13 @@ public class ArtistaControlador {
 	ArtistaServicio artistaServicio;
 	
 	@RequestMapping(value = "/artista", method = RequestMethod.POST)
-	String savePerson(@ModelAttribute Artista artista, ModelMap model) {
+	String guardarArtista(@ModelAttribute Artista artista, ModelMap model) {
 		System.out.println("guardando: " + artista.getId());
 		artistaServicio.save(artista);
 		return MostrarArtista(artista.getId(), model);
 	}
 	@RequestMapping(value = "/agregar-artista", method = RequestMethod.GET)
-	String addNewPerson(@RequestParam(required = false) Long id, ModelMap model) {
+	String agregarNuevoArtista(@RequestParam(required = false) Long id, ModelMap model) {
 		Artista artista= id == null ? new Artista() : artistaServicio.get(id);
 		model.addAttribute("artista", artista);
 		return "agregar-artista";
