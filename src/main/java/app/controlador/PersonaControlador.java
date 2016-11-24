@@ -27,7 +27,7 @@ public class PersonaControlador {
 			return MostrarPersona(Persona.getIdPersona(), model);
 		}
 		@RequestMapping(value = "/agregar-Persona", method = RequestMethod.GET)
-		String agregarNuevoPersona(@RequestParam(required = false) Long id, ModelMap model) {
+		String agregarNuevaPersona(@RequestParam(required = false) Long id, ModelMap model) {
 			Persona Persona= id == null ? new Persona() : PersonaServicio.get(id);
 			model.addAttribute("Persona", Persona);
 			return "agregar-Persona";

@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
+//import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
@@ -34,9 +34,6 @@ public class Persona {
 	@OneToOne
 	@JoinColumn(name = "administrador_id")
 	private Administrador administrador;
-	
-	
-	
 	
 	public Long getIdPersona(){
 		return id_persona;
