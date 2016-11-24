@@ -38,27 +38,27 @@ public class Persona {
 	
 	
 	
-	public Long get_id_persona(){
+	public Long getIdPersona(){
 		return id_persona;
 	}
 	
-	public void set_id_persona(Long id_persona){
+	public void setIdPersona(Long id_persona){
 		this.id_persona=id_persona;
 	}
 	
-	public String get_nombre(){
+	public String getNombre(){
 	return nombre;
 	}
 	
-	public void set_nombre(String nombre ){
+	public void setNombre(String nombre ){
 		this.nombre=nombre;
 	}
 	
-	public boolean get_sexo(){
+	public boolean getSexo(){
 		return sexo;
 	}
 	
-	public void set_sexo(boolean sexo){
+	public void setSexo(boolean sexo){
 		this.sexo=sexo;
 	}
 	
