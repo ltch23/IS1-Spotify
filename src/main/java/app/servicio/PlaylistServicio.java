@@ -24,6 +24,10 @@ public class PlaylistServicio {
 		return playlistRepositorio.buscarPorId(id);
 	}
 	
+	public boolean buscarExistencia(String nombplaylist) {
+		return playlistRepositorio.buscarPorNombreBool(nombplaylist) ;				
+	}
+	
 	public List<Playlist> getTodos(){
 		return playlistRepositorio.buscarTodos(); 
 	}

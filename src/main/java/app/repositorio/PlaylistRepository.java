@@ -22,4 +22,8 @@ public interface PlaylistRepository extends Repository<Playlist, Long> {
 	
 	@Query("SELECT a FROM Playlist a WHERE a.nombre =:nombre")
 	Playlist buscarPorNombre(@Param("nombre") String nombre);
+	
+	@Query("SELECT a FROM Playlist a WHERE a.nombre =:nombre")
+	Boolean buscarPorNombreBool(@Param("nombre") String nombre);
+	
 }

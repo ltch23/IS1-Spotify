@@ -28,14 +28,14 @@ public class Cancion {
 	public String nombre;
 	
 	@Column(nullable=false)
-	private boolean activo;
+	private boolean activo=true;
 	
 	@Column(length=256)
 	private String letra;
 
 	
 	@Column(nullable=false)
-	private Date fecha;
+	private Date fecha=new Date();
 	
 	private Integer numReproducciones;
 
