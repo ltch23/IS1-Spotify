@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Playlists</title>
+</head>
+<body>
+	<table class=>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>NOMBRE</th>
+				<th>FECHA</th>
+				<th>ACTIVO</th>
+				</tr>
+		</thead>
+		
+		<tbody>
+	{% for artista in artistas %}
+			<tr>
+				<td>{{ playlist.id }}</td>
+				<td>{{ playlist.nombre }}</td>
+				<td>{{ playlist.fecha }}</td>
+				<td>{{ playlist.estado }}</td>
+				<td><a href="?id={{ playlist.id }}">Ver</a> 
+			</tr>
+	{% endfor %}
+        </tbody>
+      </table>
+      
+      <br />
+      <a href="agregar-playlist">Agregar Nuevo Playlist</a>
+</body>
+
+</html>

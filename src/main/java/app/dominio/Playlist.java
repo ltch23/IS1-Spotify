@@ -1,6 +1,6 @@
 package app.dominio;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.Collection;
 
 import javax.persistence.Column;
@@ -25,14 +25,14 @@ public class Playlist {
 	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
 	
-	@Column(length = 64)
+	@Column(nullable=false,length = 64)
 	public String nombre;
 	
 	@Column(length = 64)
-	public Boolean activo;
+	public Boolean activo = true;
 	
 	@Column(length = 64)
-	public Date fecha;	
+	public Date fecha = new Date();	
 	
 	public Long getIdPlaylist(){
 		return idPlaylist;

@@ -14,12 +14,14 @@ import app.dominio.Administrador;
 import app.dominio.Album;
 import app.dominio.Artista;
 import app.dominio.Cancion;
+import app.dominio.Playlist;
 import app.dominio.Valoracion;
 import app.repositorio.AdministradorRepositorio;
 import app.repositorio.AlbumRepositorio;
 import app.repositorio.ArtistaRepositorio;
 import app.repositorio.CancionRepositorio;
 import app.repositorio.PersonaRepositorio;
+import app.repositorio.PlaylistRepository;
 import app.repositorio.UsuarioRepositorio;
 import app.repositorio.ValoracionRepository;
 
@@ -43,6 +45,8 @@ public class SpotifyApplicationTests {
 	@Autowired
 	AdministradorRepositorio admintradorRepositorio;
 	
+	@Autowired
+	PlaylistRepository playlistRepositorio;
 	
 	@Test
 	public void testArtistaAndAlbum(){
@@ -100,11 +104,19 @@ public class SpotifyApplicationTests {
 	
 	}
 	
+	@Test
+	public void testPlaylist(){
+		Playlist playlist = new Playlist();
+		playlist.setNombre("playlist1");
+		
+		playlistRepositorio.save(playlist);
+		
+	}
 	
 	
 	@Test 
 	public void testValoracion(){
-		/*Cancion cancion = new Cancion();
+	/*	Cancion cancion = new Cancion();
 		cancion.setNombre("wwD");
 		cancion.setFecha(new Date());
 		cancion.setEstado(true);	
@@ -114,7 +126,9 @@ public class SpotifyApplicationTests {
 		val.setPuntuacion(5);  //PUNTUACION DE LA CANCIAON
 		val.setCancion(cancion);
 		val2 = valoracionRepository.save(val);
-	 	//Intento de cambiar la puntutacion
+	 
+	  // 	Intento de cambiar la puntutacion
+	  
 		Assert.assertNotNull(val2.getIdValoracion());
 		val2.setPuntuacion(7);  //PUNTUACION DE LA CANCIAON
 		valoracionRepository.save(val2);
