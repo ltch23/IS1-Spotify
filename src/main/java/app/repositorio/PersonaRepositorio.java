@@ -17,7 +17,7 @@ public interface PersonaRepositorio extends Repository<Persona, Long> {
 	@Query("SELECT a FROM Persona a ")
 	List<Persona> buscarTodos();
 	
-	@Query("SELECT al FROM Persona al WHERE al.idPlaylist = :id")
+	@Query("SELECT al FROM Persona al WHERE al.id_persona = :id")
 	Persona buscarPorId(@Param("id") Long id);
 	
 	@Query("SELECT a FROM Persona a WHERE a.nombre =:nombre")
