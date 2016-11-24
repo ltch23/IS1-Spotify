@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import app.dominio.Administrador;
+import app.dominio.Cancion;
 import app.servicio.AdministradorServicio;
 
 @Controller
@@ -25,6 +26,12 @@ public class AdministradorControlador {
 					
 			model.addAttribute("administradores", administradores);
 			return "administradores";
+	}
+	@RequestMapping(value = "/agregaradministrador", method = RequestMethod.GET)
+	String agregarNuevaCancion(@RequestParam(required = false) Long id, ModelMap model) {
+		Administrador administrador= id == null ? new Administrador() : administradorServicio.get(id);
+		model.addAttribute("administrador", administrador);
+		return "agregaradministrador";
 	}
 
 }
