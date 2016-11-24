@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Personas</title>
+</head>
+<body>
+	<table class=>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>NOMBRE</th>
+				
+				</tr>
+		</thead>
+		
+		<tbody>
+	{% for persona in personas %}
+			<tr>
+				<td>{{ persona.id }}</td>
+				<td>{{ persona.nombre }}</td>
+				<td>					
+				</td>
+				<td><a href="?id={{ persona.id }}">Ver</a> 
+			</tr>
+	{% endfor %}
+        </tbody>
+      </table>
+      
+      <br />
+      <a href="agregar-persona">Agregar Nueva Persona</a>
+</body>
+
+</html>
