@@ -1,6 +1,6 @@
 package app.dominio;
 
-import java.util.Collection;
+import java.util.List;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -15,14 +15,11 @@ import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Usuario {
-//	enum TipoUsuario {
-//		ADMIN, GENERAL
-//	}
 
 	@Id
 	@SequenceGenerator(name = "usuario_id_generator", sequenceName = "usuario_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usuario_id_generator")
-	private Long id_usuario;
+	private Long idUsuario;
 	
 	@Column(length=64)
 	public String nickname;
@@ -31,70 +28,56 @@ public class Usuario {
 	public String contrasena;
 		
 	@Column(nullable=false)
-	private Date fecha_creacion=new Date();
+	private Date fecha=new Date();
 	
 	@Column(nullable=false)
-	private boolean activo;
+	private boolean activo=true;
 
 	@OneToMany(mappedBy = "usuario")
-	private Collection<Playlist> playlists;
+	private List<Playlist> playlists;
 
 	@OneToOne
 	@JoinColumn(name = "persona_id")
 	private Persona persona;
-	/*
-	@OneToMany(mappedBy="Lista_de_canciones")
-	Crear Clase Cancion
-	private Collection<Cancion> timeline;
-	*/
-//	TipoUsuario tipo;
 
-	public Long get_id_usuario(){
-		return id_usuario;
+	public Long getIdUsuario(){
+		return idUsuario;
 	}
 	
-	public void set_id_usuario(Long id_usuario){
-		this.id_usuario=id_usuario;
+	public void sestIdUsuario(Long id_usuario){
+		this.idUsuario=id_usuario;
 	}
 	
-	public String get_nickname(){
+	public String getNickname(){
 		return nickname;
 	}
 		
-	public void set_nickname(String nickname){
+	public void setNickname(String nickname){
 		this.nickname=nickname;
 	}
 	
-	/*
-	public String get_contrasena(){
-		return contrasena;
-	}
-		
-	public void set_contrasena(String contrasena){
-		this.contrasena=contrasena;
-	}
-	*/
-	public Date get_fecha_creacion(){
-		return fecha_creacion;
+	
+	public Date getFecha(){
+		return fecha;
 	}
 	
-	public void set_fecha_creacion(Date fecha_creacion){
-		this.fecha_creacion=fecha_creacion;
+	public void setFecha(Date fecha_creacion){
+		this.fecha=fecha_creacion;
 	}
 	
-	public boolean get_activo(){
+	public boolean getEstado(){
 		return activo;
 	}
 	
-	public void set_activo(boolean activo){
+	public void setEstado(boolean activo){
 		this.activo=activo;
 	}
 
-	public Collection<Playlist> getPlaylists() {
+	public List<Playlist> getPlaylists() {
 		return playlists;
 	}
 
-	public void setPlaylists(Collection<Playlist> playlists) {
+	public void setPlaylists(List<Playlist> playlists) {
 		this.playlists = playlists;
 	}
 	
