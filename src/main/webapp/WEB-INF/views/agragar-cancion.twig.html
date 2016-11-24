@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Cancion</title>
+</head>
+
+
+<body>
+
+<form action="cancion" method="POST">
+		<table>
+			<tbody>
+				<tr>
+					<td>ID</td>
+					<td><input type="hidden" name="id" value="{{cancion.id}}" />{{cancion.id}}</td>
+				</tr>
+				
+				<tr>
+					<td>Usuario ID </td>
+					<td><input type="text" name="usuarioid" value="{{cancion.usuarioid}}" /></td>
+				</tr>
+				
+				<tr>
+					<td>Nombre de Cancion</td>
+					<td><input type="text" name="nombre" value="{{cancion.nombre}}" /></td>
+				</tr>
+								
+			</tbody>
+		</table>
+		<br>
+		<input type="submit" value="Guardar" />
+		<input type="button" value="Cancelar" onclick="history.back();" />
+	</form>
+</body>
+</html>

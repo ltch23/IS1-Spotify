@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Cancion</title>
+</head>
+<body>
+	<table class=>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>NOMBRE</th>
+				<th>FECHA</th>
+				<th>ACTIVO</th>
+				</tr>
+		</thead>
+		
+		<tbody>
+	{% for cancion in canciones %}
+			<tr>
+				<td>{{ cancion.id }}</td>
+				<td>{{ cancion.nombre }}</td>
+				<td>{{ cancion.fecha }}</td>
+				<td>{{ cancion.estado }}</td>
+				<td><a href="?id={{ cancion.id }}">Ver</a> 
+			</tr>
+	{% endfor %}
+        </tbody>
+      </table>
+      
+      <br />
+      <a href="agregar-cancion">Agregar Nueva Cancion</a>
+</body>
+
+</html>
