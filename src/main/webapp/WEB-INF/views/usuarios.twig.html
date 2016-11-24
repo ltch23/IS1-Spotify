@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Usuarios</title>
+</head>
+<body>
+	<table class=>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>NOMBRE</th>
+				<th>NICKNAME</th>
+				<th>FECHA</th>
+				<th>PERSONA_ID</th>
+				<th>ACTIVO</th>
+				</tr>
+		</thead>
+		
+		<tbody>
+	{% for usuario in usuarios %}
+			<tr>
+				<td>{{ artista.id }}</td>
+				<td>{{ artista.nombre }}</td>
+				<td>{{ artista.nickname }}</td>
+				<td>{{ artista.fecha }}</td>
+				<td>{{ artista.persona }}</td>
+				<td>{{ artista.estado }}</td>
+				<td><a href="?id={{ usuario.id }}">Ver</a> 
+			</tr>
+	{% endfor %}
+        </tbody>
+      </table>
+      
+      <br />
+      <a href="agregar-usuario">Agregar Nuevo Usuario</a>
+</body>
+
+</html>
