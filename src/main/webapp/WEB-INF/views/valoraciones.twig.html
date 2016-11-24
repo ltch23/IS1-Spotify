@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Valoraciones</title>
+</head>
+<body>
+	<table class=>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Cancion</th>
+				<th>Puntuación</th>
+				</tr>
+		</thead>
+		
+		<tbody>
+	{% for artista in artistas %}
+			<tr>
+				<td>{{ valoracion.id }}</td>
+				<td>{{ valoracion.cancion.nombre }}</td>
+				<td>{{ valoracion.fecha }}</td>
+				<td><a href="?id={{ valoracion.id }}">Ver</a> 
+			</tr>
+	{% endfor %}
+        </tbody>
+      </table>
+      
+      <br />
+      <a href="agregar-valoracion">Agregar Nueva Valoracion</a>
+</body>
+
+</html>
