@@ -1,6 +1,7 @@
 package app.servicio;
 
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,24 @@ public class CancionServicio {
 	CancionRepositorio CancionRepositorioo;
 	
 	@Transactional
+	public Boolean find_cancion(Long id)
+	{
+		Collection<Cancion> canciones = CancionRepositorioo.buscarTodos();
+		for(int i=0;i<canciones.size();i++)
+		{
+			if(canciones[i].getIdCancion()==id)
+			{
+				return 1;
+			}
+		}
+		return 0;
+	}
+	
 	public void save(Cancion cancion) {
-		CancionRepositorioo.save(cancion);
+		if(!find_cancion(cancion.getIdCancion()))
+		{
+			CancionRepositorioo.save(cancion);			
+		}
 	}
 
 	public Cancion get(Long id) {
