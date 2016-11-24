@@ -27,10 +27,10 @@ public class Usuario {
 	@Column(length=64)
 	public String contrasena;
 		
-	@Column(nullable=false)
+	@Column()
 	private Date fecha=new Date();
 	
-	@Column(nullable=false)
+	@Column()
 	private boolean activo=true;
 
 	@OneToMany(mappedBy = "usuario")
@@ -61,8 +61,8 @@ public class Usuario {
 		return fecha;
 	}
 	
-	public void setFecha(Date fecha_creacion){
-		this.fecha=fecha_creacion;
+	public void setFecha(Date fecha){
+		this.fecha=fecha;
 	}
 	
 	public boolean getEstado(){
