@@ -1,6 +1,6 @@
 package app.dominio;
 
-import java.util.Collection;
+import java.util.List;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -22,7 +22,7 @@ public class Cancion {
 	private Long idCancion;
 
 	@OneToMany(mappedBy = "cancion")
-	public Collection<Valoracion> valoraciones;
+	public List<Valoracion> valoraciones;
 	
 	@Column(length = 256, nullable = false, unique= false)
 	public String nombre;
@@ -40,7 +40,7 @@ public class Cancion {
 	private Integer numReproducciones;
 
 	@ManyToMany(mappedBy="songs")
-	private Collection<Playlist> playlists;
+	private List<Playlist> playlists;
 	
 	@ManyToOne
 	private Album album;
