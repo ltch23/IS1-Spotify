@@ -15,11 +15,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import app.dominio.Album;
 import app.servicio.AlbumServicio;
 
+import app.dominio.Artista;
+import app.servicio.ArtistaServicio;
+
+
 @Controller
 
 public class AlbumControlador {
 
-
+	
+	ArtistaServicio artistaServicio;
+	
 		@Autowired
 		AlbumServicio albumServicio;
 		
@@ -30,7 +36,7 @@ public class AlbumControlador {
 			return MostrarAlbum(album.getId(), model);
 		}
 		@RequestMapping(value = "/agregar-album", method = RequestMethod.GET)
-		String addNuevoAlbum(@RequestParam(required = false) Long id, ModelMap model) {
+		String addNuevoAlbum(@RequestParam(required = false) Long id, Long idAr,ModelMap model) {
 			Album album = id == null ? new Album() : albumServicio.get(id);
 			model.addAttribute("album", album);
 			return "agregar-album";

@@ -56,6 +56,15 @@ public class Usuario {
 		this.nickname=nickname;
 	}
 	
+	public String getContrasena(){
+		return contrasena;
+	}
+		
+	public void setContrasena(String contrasena){
+		this.contrasena=contrasena;
+	}
+	
+	
 	
 	public Date getFecha(){
 		return fecha;
@@ -67,6 +76,14 @@ public class Usuario {
 	
 	public boolean getEstado(){
 		return activo;
+	}
+	
+	public void setPersona(Persona persona){
+		this.persona=persona;
+	}
+
+	public Persona getPersona() {
+		return persona;
 	}
 	
 	public void setEstado(boolean activo){

@@ -7,7 +7,6 @@
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>NOMBRE</th>
 				<th>NICKNAME</th>
 				<th>FECHA</th>
 				<th>PERSONA_ID</th>
@@ -18,13 +17,12 @@
 		<tbody>
 	{% for usuario in usuarios %}
 			<tr>
-				<td>{{ artista.id }}</td>
-				<td>{{ artista.nombre }}</td>
-				<td>{{ artista.nickname }}</td>
-				<td>{{ artista.fecha }}</td>
-				<td>{{ artista.persona }}</td>
-				<td>{{ artista.estado }}</td>
-				<td><a href="?id={{ usuario.id }}">Ver</a> 
+				<td>{{ usuario.idusuario }}</td>
+				<td>{{ usuario.nickname }}</td>
+				<td>{{ usuario.fecha }}</td>
+				<td>{{ usuario.persona.idpersona }}</td>
+				<td>{{ usuario.estado }}</td>
+				<td><a href="?id={{ usuario.idusuario }}">Ver</a> 
 			</tr>
 	{% endfor %}
         </tbody>
