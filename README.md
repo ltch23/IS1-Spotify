@@ -1,9 +1,13 @@
 # Ingeniería de Software I - 2016-II- Trabajo Final -Spotify#
-
-## Práctica
-##Integrantes##
-
-* Luis Tong Chabes
-
-
-Universidad Catolica San Pablo
+ 
++## Práctica
+ ##Integrantes##
+ 
+-* Wilber Cutire Sivincha 
+-* Ximena Pocco Lozada
+ * Luis Tong Chabes
+-* Sergio Valdivia Santistevan
+-* Karelia Vilca Salinas
++
+ 
+ Universidad Catolica San Pablo
