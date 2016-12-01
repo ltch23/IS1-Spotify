@@ -26,13 +26,15 @@ public class PlaylistControlador {
 			playlistServicio.save(playlist);
 			return MostrarPlaylist(playlist.getIdPlaylist(), model);
 		}
+	
 		@RequestMapping(value = "/agregar-playlist", method = RequestMethod.GET)
 		String agregarNuevoPlaylist(@RequestParam(required = false) Long id, ModelMap model) {
 			Playlist playlist= id == null ? new Playlist() : playlistServicio.get(id);
 			model.addAttribute("playlist", playlist);
 			return "agregar-playlist";
 		}
-			
+	
+	
 		@RequestMapping(value = "/playlist", method = RequestMethod.GET)
 		String MostrarPlaylist(@RequestParam(required = false) Long id, ModelMap model) {
 			if (id != null) {
