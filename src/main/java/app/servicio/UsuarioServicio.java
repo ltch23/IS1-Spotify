@@ -27,4 +27,9 @@ public class UsuarioServicio {
 	public List<Usuario> getTodos(){
 		return usuarioRepositorio.buscarTodos(); 
 	}
+	
+	/*public Boolean validarusuario(String nickn, String paswd){
+		return usuarioRepositorio.validarlogin(nickn, paswd);
+	} */ 
+	
 }
