@@ -18,17 +18,17 @@ import app.servicio.PersonaServicio;
 @Controller
 public class PersonaControlador {
 	@Autowired
-	PersonaServicio PersonaServicio;
+	PersonaServicio personaServicio;
 		
 	@RequestMapping(value = "/persona", method = RequestMethod.POST)
 		String guardarPersona(@ModelAttribute Persona Persona, ModelMap model) {
 			System.out.println("guardando: " + Persona.getIdPersona());
-			PersonaServicio.save(Persona);
+			personaServicio.save(Persona);
 			return MostrarPersona(Persona.getIdPersona(), model);
 		}
 		@RequestMapping(value = "/agregar-persona", method = RequestMethod.GET)
 		String agregarNuevaPersona(@RequestParam(required = false) Long id, ModelMap model) {
-			Persona persona= id == null ? new Persona() : PersonaServicio.get(id);
+			Persona persona= id == null ? new Persona() : personaServicio.get(id);
 			model.addAttribute("persona", persona);
 			return "agregar-persona";
 		}
@@ -36,12 +36,12 @@ public class PersonaControlador {
 		@RequestMapping(value = "/persona", method = RequestMethod.GET)
 		String MostrarPersona(@RequestParam(required = false) Long id, ModelMap model) {
 			if (id != null) {
-				Persona Persona= PersonaServicio.get(id);
-				model.addAttribute("persona", Persona);
+				Persona persona= personaServicio.get(id);
+				model.addAttribute("persona", persona);
 				return "persona";
 			} else {
-				List<Persona> Personas = PersonaServicio.getTodos();
-				model.addAttribute("personas", Personas);
+				List<Persona> personas = personaServicio.getTodos();
+				model.addAttribute("personas", personas);
 				return "personas";
 			}
 			
