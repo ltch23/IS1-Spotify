@@ -10,7 +10,7 @@
 				<th>NOMBRE</th>
 				<th>FECHA</th>
 				<th>ACTIVO</th>
-				<th>ARTISTA</th>
+				<th>ARTISTAID</th>
 				
 				</tr>
 		</thead>
@@ -22,15 +22,8 @@
 				<td>{{ album.nombre }}</td>
 				<td>{{ album.fecha }}</td>
 				<td>{{ album.estado }}</td>
-				<td>
+				<td>{{ album.artista.id }}</td>
 				
-				<ul>
-				{% for artista in album.artistas %}
-					<li>{{artistas.id}} {{artistas.nombre}}</li>
-				{% endfor %}
-				</ul>
-							
-				</td>
 				<td><a href="?id={{ album.id }}">Ver</a> 
 			</tr>
 	{% endfor %}

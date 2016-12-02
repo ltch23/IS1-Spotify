@@ -60,7 +60,7 @@ public class SpotifyApplicationTests {
 		album1.setFecha(new Date());
 		album1.setEstado(true);
 		
-		album1.setArtista(artista1);
+//		album1.setArtista(artista1);
 		//artista1.setAlbum(album1);
 		Artista a1= artistaRepositorio.save(artista1);
 		Album al1=albumRepositorio.save(album1);
