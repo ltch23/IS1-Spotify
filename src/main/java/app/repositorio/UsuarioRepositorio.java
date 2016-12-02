@@ -18,12 +18,10 @@ public interface UsuarioRepositorio extends Repository<Usuario, Long> {
 	@Query("SELECT u FROM Usuario u WHERE u.idUsuario= :id")
 	Usuario buscarPorId(@Param("id") Long id);
 	
-	/*@Query("SELECT u FROM USUARIO u WHERE u.nickname=: nickn  AND contrasena= :paswd ")
-	Boolean Usuario validarlogin(@Param("nickn") String nickn, @Param("paswd") String paswd);*/
+	@Query("SELECT u FROM Usuario u WHERE u.nickname= :nickn  and u.contrasena= :paswd ")
+	Usuario validarLogin(@Param("nickn") String nickn, @Param("paswd") String paswd);
+
 	
-	
-	
-	
-//	@Query("SELECT u FROM Usuario u WHERE u.nombre =:nombre")
+	//@Query("SELECT u FROM Usuario u WHERE u.nombre =:nombre")
 	//Usuario buscarPorNombre(@Param("nombre") String nombre);
 }
