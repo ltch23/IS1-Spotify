@@ -20,29 +20,29 @@ public class PersonaControlador {
 	@Autowired
 	PersonaServicio PersonaServicio;
 		
-	@RequestMapping(value = "/Persona", method = RequestMethod.POST)
+	@RequestMapping(value = "/persona", method = RequestMethod.POST)
 		String guardarPersona(@ModelAttribute Persona Persona, ModelMap model) {
 			System.out.println("guardando: " + Persona.getIdPersona());
 			PersonaServicio.save(Persona);
 			return MostrarPersona(Persona.getIdPersona(), model);
 		}
-		@RequestMapping(value = "/agregar-Persona", method = RequestMethod.GET)
-		String agregarNuevoPersona(@RequestParam(required = false) Long id, ModelMap model) {
-			Persona Persona= id == null ? new Persona() : PersonaServicio.get(id);
-			model.addAttribute("Persona", Persona);
-			return "agregar-Persona";
+		@RequestMapping(value = "/agregar-persona", method = RequestMethod.GET)
+		String agregarNuevaPersona(@RequestParam(required = false) Long id, ModelMap model) {
+			Persona persona= id == null ? new Persona() : PersonaServicio.get(id);
+			model.addAttribute("persona", persona);
+			return "agregar-persona";
 		}
 			
-		@RequestMapping(value = "/Persona", method = RequestMethod.GET)
+		@RequestMapping(value = "/persona", method = RequestMethod.GET)
 		String MostrarPersona(@RequestParam(required = false) Long id, ModelMap model) {
 			if (id != null) {
 				Persona Persona= PersonaServicio.get(id);
-				model.addAttribute("Persona", Persona);
-				return "Persona";
+				model.addAttribute("persona", Persona);
+				return "persona";
 			} else {
 				List<Persona> Personas = PersonaServicio.getTodos();
-				model.addAttribute("Personas", Personas);
-				return "Personas";
+				model.addAttribute("personas", Personas);
+				return "personas";
 			}
 			
 		}
