@@ -16,8 +16,24 @@ public class CancionServicio {
 	CancionRepositorio CancionRepositorioo;
 	
 	@Transactional
+	public Boolean find_cancion(String id)
+	{
+		List<Cancion> canciones = CancionRepositorioo.buscarTodos();
+		for(int i=0;i<canciones.size();i++)
+		{
+			if(canciones.get(i).getNombre()==id)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public void save(Cancion cancion) {
-		CancionRepositorioo.save(cancion);
+		if(find_cancion(cancion.getNombre())==false)
+		{
+			CancionRepositorioo.save(cancion);			
+		}
 	}
 
 	public Cancion get(Long id) {
