@@ -1,28 +1,30 @@
-package app.repositorio;
+package app.servicio;
+
 
 import java.util.List;
 
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.Repository;
-import org.springframework.data.repository.query.Param;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import app.dominio.Playlist;
+import app.repositorio.PlaylistRepository;
 
-
-public interface PlaylistRepository extends Repository<Playlist, Long> {
-	Playlist save(Playlist playlist);
-
-	@Query("SELECT a FROM Playlist a WHERE a.activo = TRUE")
-	List<Playlist> buscarTodos();
+@Service
+public class PlaylistServicio {
+	@Autowired
+	PlaylistRepository playlistRepositorio;
 	
-	@Query("SELECT al FROM Playlist al WHERE al.idPlaylist = :id")
-	Playlist buscarPorId(@Param("id") Long id);
-	
-	@Query("SELECT a FROM Playlist a WHERE a.nombre =:nombre")
-	Playlist buscarPorNombre(@Param("nombre") String nombre);
+	@Transactional
+	public void save(Playlist playlist) {
+		playlistRepositorio.save(playlist);
+	}
 
-	@Query("SELECT a FROM Playlist a WHERE a.activo = TRUE and a.usuario.idUsuario= :id")
-	List<Playlist> getUsuarioPlaylists(@Param("id") Long id);
+	public Playlist get(Long id) {
+		return playlistRepositorio.buscarPorId(id);
+	}
 	
+	public List<Playlist> getTodos(){
+		return playlistRepositorio.buscarTodos(); 
+	}
 }
