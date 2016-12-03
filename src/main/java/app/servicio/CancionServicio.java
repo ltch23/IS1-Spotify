@@ -16,23 +16,31 @@ public class CancionServicio {
 	CancionRepositorio CancionRepositorioo;
 	
 	@Transactional
-	public Boolean find_cancion(String id)
+	public Boolean find_cancion(String nombre)
 	{
-		List<Cancion> canciones = CancionRepositorioo.buscarTodos();
+		/*List<Cancion> canciones = CancionRepositorioo.buscarTodos();
+		//Cancion canci = CancionRepositorioo.buscarPorId(id);
 		for(int i=0;i<canciones.size();i++)
 		{
-			if(canciones.get(i).getNombre()==id)
+			if(canciones.get(i).getNombre()==nombre)
 			{
 				return true;
 			}
 		}
-		return false;
+		return false;*/
+		if(CancionRepositorioo.buscarPorNombre(nombre)==null) return false;
+		return true;
 	}
 	
 	public void save(Cancion cancion) {
-		if(find_cancion(cancion.getNombre())==false)
+		String name = cancion.getNombre();
+		if(find_cancion(name)==false)
 		{
 			CancionRepositorioo.save(cancion);			
+		}
+		else
+		{
+			CancionRepositorio.setFixedCancion(name);
 		}
 	}
 

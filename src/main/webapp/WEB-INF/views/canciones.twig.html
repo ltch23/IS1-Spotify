@@ -16,11 +16,12 @@
 		<tbody>
 	{% for cancion in canciones %}
 			<tr>
-				<td>{{ cancion.id }}</td>
+				<td>{{ cancion.idCancion }}</td>
 				<td>{{ cancion.nombre }}</td>
 				<td>{{ cancion.fecha }}</td>
 				<td>{{ cancion.estado }}</td>
-				<td><a href="?id={{ cancion.id }}">Ver</a> 
+				<td><a href="?id={{ cancion.idCancion }}">Ver</a> 
+				<!-- <td><a href="?id={{ artista.id }}">Ver</a>--> 
 			</tr>
 	{% endfor %}
         </tbody>
