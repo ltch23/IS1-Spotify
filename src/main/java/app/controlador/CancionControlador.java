@@ -32,7 +32,7 @@ public class CancionControlador {
 			model.addAttribute("cancion", cancion);
 			return "agregar-cancion";
 		}
-			
+
 		@RequestMapping(value = "/cancion", method = RequestMethod.GET)
 		String MostrarCancion(@RequestParam(required = false) Long id, ModelMap model) {
 			if (id != null) {
@@ -46,7 +46,13 @@ public class CancionControlador {
 			}
 			
 		}
-
+		
+		@RequestMapping(value = "/top-ten", method= RequestMethod.GET)
+		String MostrarCanciones(@RequestParam(required = false) long id, ModelMap model){
+			List<Cancion> canciones = cancionServicio.topTen();
+			model.addAttribute("canciones",canciones);
+			return "canciones";
+		}
 }
 
 
