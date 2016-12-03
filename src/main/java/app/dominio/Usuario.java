@@ -20,14 +20,14 @@ public class Usuario {
 	@SequenceGenerator(name = "usuario_id_generator", sequenceName = "usuario_id_seq", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usuario_id_generator")
 	private Long idUsuario;
-	
+
 	@Column(length=64)
 	public String nickname;
-	
+
 	@Column(length=64)
 	public String contrasena;
-		
-	@Column()
+	
+	@Column(nullable=false)
 	private Date fecha=new Date();
 	
 	@Column()
@@ -37,7 +37,7 @@ public class Usuario {
 	private List<Playlist> playlists;
 
 	@OneToOne
-	@JoinColumn(name = "persona_id")
+	@JoinColumn(name = "persona_id", referencedColumnName="id_persona")
 	private Persona persona;
 
 	public Long getIdUsuario(){
@@ -97,7 +97,5 @@ public class Usuario {
 	public void setPlaylists(List<Playlist> playlists) {
 		this.playlists = playlists;
 	}
-	
-	
 
 }
