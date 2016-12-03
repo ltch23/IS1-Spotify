@@ -1,9 +1,188 @@
 <html>
 <head>
-<title>Usuarios</title>
+   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,900,300' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Codystar" rel="stylesheet">
+    <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <title>Welcome</title>   
 </head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+<style>
+@import url('bootstrap.min.css');
+.glam
+{
+    /*Al tener ya fonst con este clase indico que partes de mi pag deseo que posean este estilo si no se pudiese pondra cursiva*/
+    font-family: 'Codystar', cursive;
+}
+body{
+    background: url('http://65.media.tumblr.com/2efa98ac84cd629efe1482a60af7d0c7/tumblr_nqdfd4r0QZ1sypb7po1_1280.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-top: 10%;    
+}
 
+#bg{
+    background:url('http://65.media.tumblr.com/2efa98ac84cd629efe1482a60af7d0c7/tumblr_nqdfd4r0QZ1sypb7po1_1280.jpg') no-repeat center center;
+    height: 500px;
+}
+
+#main-header {
+	background: #333;
+	color: white;
+	height: 80px;
+    width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+	left: 0; /* Posicionamos la cabecera al lado izquierdo */
+	top: 0; /* Posicionamos la cabecera pegada arriba */
+	position: fixed; /* Hacemos que la cabecera tenga una posición fija */
+}	 
+#main-footer {
+	background: #333;
+	color: white;
+	text-align: center;
+	padding: 20px;
+	margin-top: 40px;
+}
+#main-footer p {
+	margin: 0;
+}
+#main-footer a {
+	color: white;
+}
+#main-header a {
+	color: white;
+}
+ 
+/*
+ * Logo
+ */
+#logo-header {
+	float: left;
+	padding: 15px 0 0 20px;
+	text-decoration: none;
+}
+	#logo-header:hover {
+		color: #0b76a6;
+	}
+	
+	#logo-header .site-name {
+		display: block;
+		font-weight: 700;
+		font-size: 1.2em;
+	}
+	
+	#logo-header .site-desc {
+		display: block;
+		font-weight: 300;
+		font-size: 0.8em;
+		color: #999;
+	}
+	
+ 
+/*
+ * Navegación
+ */
+nav {
+	float: right;
+}
+	nav ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		padding-right: 20px;
+	}
+	
+		nav ul li {
+			display: inline-block;
+			line-height: 80px;
+		}
+			
+			nav ul li a {
+				display: block;
+				padding: 0 10px;
+				text-decoration: none;
+			}
+			
+				nav ul li a:hover {
+					background: #0b76a6;
+				}
+
+#main-content {
+	background: white;
+	width: 90%;
+	max-width: 800px;
+	margin: 20px auto;
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+	#main-content header,
+	#main-content .content {
+		padding: 40px;
+	}
+
+#main-content {
+	background: white;
+	width: 90%;
+	max-width: 800px;
+	margin: 20px auto;
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+ 
+	#main-content header,
+	#main-content .content {
+		padding: 40px;
+	}
+</style>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+
+<!-- Tether -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+
+<!-- Bootstrap 4 Alpha JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
+
+<!-- Initialize Bootstrap functionality -->
+<script>
+// Initialize tooltip component
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+// Initialize popover component
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+</script>
 <body>
+	<header id="main-header">
+		<a id="logo-header" href="http://icons.iconarchive.com/icons/artcore-illustrations/artcore-4/512/spotify-icon.png">
+			<span class="site-name">Sporify</span>
+			<span class="site-desc">Musica sin anuncios</span>
+		   
+		</a> <!-- / #logo-header -->
+		<img src="http://icons.iconarchive.com/icons/artcore-illustrations/artcore-4/512/spotify-icon.png" width="50" height="50">
+        <nav>
+			<ul>
+				<li><a href=".html">Inicio</a></li>
+				<li><a href=".html">Login</a></li>
+				<li><a href="playlist.html">Playlist</a></li>
+				<li><a href="artista.html">Artistas</a></li>
+				<li><a href="cancion.html">Canciones</a></li>
+				<li><a href=".html">Logout</a></li>
+			</ul>
+		</nav><!-- / nav -->
+ 
+	</header><!-- / #main-header -->  
+	
+	<font color="White" ><h2 class="glam text-center display-1">   Playlists   </h2>
+    </font>
 	
 	<table class=>
 		<thead>
@@ -11,29 +190,29 @@
 		
 		<tbody>
 			<tr>
-				<th>ID</th>
-				<td>{{ usuario.idusuario }}</td>
+				<th><font color="White" >ID</font></th>
+				<td><font color="White" >{{ usuario.idusuario }}</font></td>
 			</tr>
 			<tr>
-				<th>Nickname</th>
-				<td>{{ usuario.nickname }}</td>
+				<th><font color="White" >Nickname</font></th>
+				<td><font color="White" >{{ usuario.nickname }}</font></td>
 			</tr>
 			<tr>
-				<th>Fecha</th>
-				<td>{{ usuario.fecha }}</td>
+				<th><font color="White" >Fecha</font></th>
+				<td><font color="White" >{{ usuario.fecha }}</font></td>
 			</tr>
 			<tr>
-				<th>Persona_id</th>
-				<td>{{ usuario.persona.idpersona }}</td>
-			</tr>
+				<th><font color="White" >Persona_id</font></th>
+				<td><font color="White" >{{ usuario.persona.idpersona }}</font></td>
+			<!--/tr>
 				<th>Activo</th>
 				<td>{{ usuario.estado }}</td>
-			</tr>
+			</tr-->
 			
 		</tbody>
       </table>
       <br />
-      <a href="agregar-usuario">Agregar Nuevo Usuario</a> | <a href="usuario">Listar</a>
+      <!--a href="agregar-usuario">Agregar Nuevo Usuario</a> | <a href="usuario">Listar</a-->
 
 
 </body>
