@@ -28,11 +28,8 @@ public class UsuarioServicio {
 		return usuarioRepositorio.buscarTodos(); 
 	}
 	
-	public boolean validarUsuario(String nickn, String paswd){
-		if(usuarioRepositorio.validarLogin(nickn, paswd)==null){
-			return false;
-		}
-		return true;
+	public Usuario validarUsuario(String nickn, String paswd){
+		return usuarioRepositorio.validarLogin(nickn, paswd);
 	} 
 	
 }
