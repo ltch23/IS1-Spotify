@@ -44,7 +44,17 @@ public class UsuarioControlador {
 				model.addAttribute("usuarios", usuarios);
 				return "usuarios";
 			}
-			
 		}
 
+		@RequestMapping(value= "/validar-usuario",method = RequestMethod.GET)
+		String validarUsuario(@RequestParam(required = true) String name, @RequestParam(required = true) String password, ModelMap model){
+			Usuario usuario= usuarioServicio.validarUsuario(name,password);
+			if(usuario!=null){
+				model.addAttribute("usuario",usuario);
+				return "usuario";
+			} else {
+				System.out.println("pase2");
+				return "home";
+			}
+		}
 }
