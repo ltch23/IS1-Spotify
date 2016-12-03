@@ -16,7 +16,7 @@ public interface ArtistaRepositorio extends Repository<Artista, Long>{
 
 	Artista save(Artista artista);
 	
-	@Query("SELECT a FROM Artista a ")
+	@Query("SELECT a FROM Artista a WHERE a.activo = TRUE ")
 	List<Artista> buscarTodos();
 	
 	

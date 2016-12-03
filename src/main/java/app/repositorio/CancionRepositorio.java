@@ -18,7 +18,7 @@ public interface CancionRepositorio extends Repository<Cancion, Long>{
 	Cancion save(Cancion canci);
 	//Cancion Update();
 
-	@Query("SELECT a FROM Cancion a ")
+	@Query("SELECT c FROM Cancion c WHERE c.activo = TRUE ")
 	List<Cancion> buscarTodos();
 	
 	@Query("SELECT c FROM Cancion c WHERE c.idCancion = :id")
