@@ -251,7 +251,7 @@ $(function () {
 				<th>ID</th>
 				<th>NOMBRE</th>
 				<th>FECHA</th>
-				<th>ACTIVO</th>
+				<!--th>ACTIVO</th-->
 				</tr>
 		</thead>
 		
@@ -261,8 +261,8 @@ $(function () {
 				<td>{{ cancion.idCancion }}</td>
 				<td>{{ cancion.nombre }}</td>
 				<td>{{ cancion.fecha }}</td>
-				<td>{{ cancion.estado }}</td>
-				<td><a href="?id={{ cancion.idCancion }}">Ver</a> 
+				<!--td>{{ cancion.estado }}</td-->
+				<td><a href="?id={{ cancion.idCancion }}">Ver</a></td> 
 				<!-- <td><a href="?id={{ artista.id }}">Ver</a>--> 
 			</tr>
 	{% endfor %}

@@ -263,7 +263,7 @@ $(function () {
 				<th>ID</th>
 				<th>NOMBRE</th>
 				<th>FECHA</th>
-				<th>ACTIVO</th>
+				<!-- th>ACTIVO</th-->
 				</tr>
 		</thead>
 		
@@ -273,8 +273,8 @@ $(function () {
 				<td>{{ artista.id }}</td>
 				<td>{{ artista.nombre }}</td>
 				<td>{{ artista.fecha }}</td>
-				<td>{{ artista.estado }}</td>
-				<td><a href="?id={{ artista.id }}">Ver</a> 
+				<!--td>{{ artista.estado }}</td-->
+				<td><a href="?id={{ artista.id }}">Ver</a> </td>
 			</tr>
 	{% endfor %}
         </tbody>
