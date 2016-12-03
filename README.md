@@ -6,7 +6,7 @@
 * Wilber Cutire Sivincha 
 * Ximena Pocco Lozada
 * Luis Tong Chabes
-* Sergio Valdivia Santistevan
+* Sergio Valdivia Santisteban
 * Karelia Vilca Salinas
 
 
