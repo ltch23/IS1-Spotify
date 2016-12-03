@@ -37,6 +37,7 @@ public class UsuarioControlador {
 		String MostrarUsuario(@RequestParam(required = false) Long id, ModelMap model) {
 			if (id != null) {
 				Usuario usuario= usuarioServicio.get(id);
+				usuarioServicio.userActive=usuario;
 				model.addAttribute("usuario", usuario);
 				return "usuario";
 			} else {
