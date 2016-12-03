@@ -12,7 +12,7 @@ import app.dominio.Playlist;
 
 
 public interface PlaylistRepository extends Repository<Playlist, Long> {
-	Playlist save(Playlist pla);
+	Playlist save(Playlist playlist);
 
 	@Query("SELECT a FROM Playlist a ")
 	List<Playlist> buscarTodos();
