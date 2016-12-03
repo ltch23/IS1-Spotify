@@ -261,7 +261,7 @@ $(function () {
 				<th>ID</th>
 				<th>NOMBRE</th>
 				<th>FECHA</th>
-				<th>ACTIVO</th>
+				<!--th>ACTIVO</th-->
 				</tr>
 		</thead>
 		
@@ -270,9 +270,13 @@ $(function () {
 			<tr>
 				<td>{{ playlist.idPlaylist }}</td>
 				<td>{{ playlist.nombre }}</td>
-				<td>{{ playlist.fecha }}</td>
-				<td>{{ playlist.estado }}</td>
-				<td><a href="?id={{ playlist.id }}">Ver</a> 
+				<!--td>{{ playlist.fecha }}</td-->
+				<td><form action="#">
+					<input type="image" src="http://www.clipartkid.com/images/17/youtube-play-button-icon-clipart-free-clipart-CgtMt2-clipart.png" alt="playbutton" width="20" height="20" href=#></td>
+					</form>
+				</td>
+				<!--td>{{ playlist.estado }}</td-->
+				<td><a href="?id={{ playlist.id }}">Ver</a></td>
 			</tr>
 	{% endfor %}
         </tbody>

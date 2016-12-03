@@ -14,7 +14,7 @@ import app.dominio.Playlist;
 public interface PlaylistRepository extends Repository<Playlist, Long> {
 	Playlist save(Playlist playlist);
 
-	@Query("SELECT a FROM Playlist a ")
+	@Query("SELECT a FROM Playlist a WHERE a.activo = TRUE")
 	List<Playlist> buscarTodos();
 	
 	@Query("SELECT al FROM Playlist al WHERE al.idPlaylist = :id")
