@@ -48,7 +48,7 @@ public class CancionControlador {
 		}
 		
 		@RequestMapping(value = "/top-ten", method= RequestMethod.GET)
-		String MostrarCanciones(@RequestParam(required = false) long id, ModelMap model){
+		String MostrarCanciones(ModelMap model){
 			List<Cancion> canciones = cancionServicio.topTen();
 			model.addAttribute("canciones",canciones);
 			return "canciones";
