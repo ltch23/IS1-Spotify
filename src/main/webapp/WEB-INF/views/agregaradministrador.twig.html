@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Administrador</title>
+</head>
+
+
+<body>
+
+<form action="administrador" method="POST">
+		<table>
+			<tbody>
+				<tr>
+					<td>Admnistrador ID</td>
+					<td><input type="hidden" name="id" value="{{administrador.idAdministrador}}" />{{administrador.idAdministrador}}</td>
+				</tr>
+				
+				<tr>
+					<td>Persona ID </td>
+					<td><input type="text" name="personaId" value="{{administrador.personaId}}" /></td>
+				</tr>
+				
+								
+			</tbody>
+		</table>
+		<br>
+		<input type="submit" value="Guardar" />
+		<input type="button" value="Cancelar" onclick="history.back();" />
+	</form>
+</body>
+</html>

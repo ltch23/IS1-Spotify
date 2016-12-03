@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import app.dominio.Administrador;
+import app.dominio.Cancion;
 import app.repositorio.AdministradorRepositorio;
 
 @Service
@@ -17,4 +18,8 @@ public class AdministradorServicio {
 	public List<Administrador> getTodos(){
 		return administradorRepositorio.buscarTodos(); 
 	}
+	public Administrador get(Long id) {
+		return administradorRepositorio.buscarPorId(id);
+	}
+	
 }

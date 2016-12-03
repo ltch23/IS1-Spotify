@@ -20,7 +20,9 @@ public class Administrador {
 		@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "administrador_id_generator")
 		
 		private Long idAdministrador;
-
+		public void Admnistrador()
+		{	
+		}
 		public Long getIdAdministrador() {
 			return idAdministrador;
 		}
