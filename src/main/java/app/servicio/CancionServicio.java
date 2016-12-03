@@ -1,6 +1,7 @@
 package app.servicio;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ import app.repositorio.CancionRepositorio;
 public class CancionServicio {
 	@Autowired
 	CancionRepositorio CancionRepositorioo;
-	
+
 	@Transactional
 	public Boolean find_cancion(String nombre)
 	{
@@ -31,7 +32,7 @@ public class CancionServicio {
 		if(CancionRepositorioo.buscarPorNombre(nombre)==null) return false;
 		return true;
 	}
-	
+
 	public void save(Cancion cancion) {
 		String name = cancion.getNombre();
 		if(find_cancion(name)==false)
@@ -50,5 +51,13 @@ public class CancionServicio {
 	
 	public List<Cancion> getTodos(){
 		return CancionRepositorioo.buscarTodos(); 
+	}
+	public List<Cancion> topTen(){
+		List<Cancion> topTen=new ArrayList<Cancion>();
+		List<Cancion> orderCanciones=CancionRepositorioo.cancionTop();
+		for (int i=0;i<10 && i<orderCanciones.size();i++){
+			topTen.add(orderCanciones.get(i));
+		}
+		return topTen;
 	}
 }
