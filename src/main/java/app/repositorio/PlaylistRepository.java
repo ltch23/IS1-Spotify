@@ -10,7 +10,6 @@ import org.springframework.data.repository.query.Param;
 import app.dominio.Playlist;
 
 
-
 public interface PlaylistRepository extends Repository<Playlist, Long> {
 	Playlist save(Playlist playlist);
 
@@ -22,4 +21,8 @@ public interface PlaylistRepository extends Repository<Playlist, Long> {
 	
 	@Query("SELECT a FROM Playlist a WHERE a.nombre =:nombre")
 	Playlist buscarPorNombre(@Param("nombre") String nombre);
+
+	@Query("SELECT a FROM Playlist a WHERE a.activo = TRUE and a.usuario.idUsuario= :id")
+	List<Playlist> getUsuarioPlaylists(@Param("id") Long id);
+	
 }

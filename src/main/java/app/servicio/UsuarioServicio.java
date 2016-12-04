@@ -15,6 +15,8 @@ public class UsuarioServicio {
 	@Autowired
 	UsuarioRepositorio usuarioRepositorio;
 	
+	public Usuario userActive;
+	
 	@Transactional
 	public void save(Usuario usuario) {
 		usuarioRepositorio.save(usuario);
@@ -33,3 +35,4 @@ public class UsuarioServicio {
 	} 
 	
 }
+
